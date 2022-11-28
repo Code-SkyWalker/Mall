@@ -1,0 +1,3764 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "微服务工程代码生成器,生成Dao、Service、Controller、Pojo、Feign、Swagger的JSON脚本",
+    "version": "1.0.0",
+    "title": "深圳黑马训练营代码生成器",
+    "termsOfService": "https://github.com/shenkunlin/code-template.git",
+    "contact": {
+      "email": "shenkunlin@itcast.cn"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+        {
+      "name": "UndoLogController",
+      "description": "UndoLogController"
+    },
+    {
+      "name": "UndoLogController",
+      "description": "UndoLogController"
+    },
+    {
+      "name": "UndoLogController",
+      "description": "UndoLogController"
+    },
+    {
+      "name": "UndoLogController",
+      "description": "UndoLogController"
+    },
+    {
+      "name": "WmsPurchaseController",
+      "description": "WmsPurchaseController"
+    },
+    {
+      "name": "WmsPurchaseController",
+      "description": "WmsPurchaseController"
+    },
+    {
+      "name": "WmsPurchaseController",
+      "description": "WmsPurchaseController"
+    },
+    {
+      "name": "WmsPurchaseController",
+      "description": "WmsPurchaseController"
+    },
+    {
+      "name": "WmsPurchaseDetailController",
+      "description": "WmsPurchaseDetailController"
+    },
+    {
+      "name": "WmsPurchaseDetailController",
+      "description": "WmsPurchaseDetailController"
+    },
+    {
+      "name": "WmsPurchaseDetailController",
+      "description": "WmsPurchaseDetailController"
+    },
+    {
+      "name": "WmsPurchaseDetailController",
+      "description": "WmsPurchaseDetailController"
+    },
+    {
+      "name": "WmsWareInfoController",
+      "description": "WmsWareInfoController"
+    },
+    {
+      "name": "WmsWareInfoController",
+      "description": "WmsWareInfoController"
+    },
+    {
+      "name": "WmsWareInfoController",
+      "description": "WmsWareInfoController"
+    },
+    {
+      "name": "WmsWareInfoController",
+      "description": "WmsWareInfoController"
+    },
+    {
+      "name": "WmsWareOrderTaskController",
+      "description": "WmsWareOrderTaskController"
+    },
+    {
+      "name": "WmsWareOrderTaskController",
+      "description": "WmsWareOrderTaskController"
+    },
+    {
+      "name": "WmsWareOrderTaskController",
+      "description": "WmsWareOrderTaskController"
+    },
+    {
+      "name": "WmsWareOrderTaskController",
+      "description": "WmsWareOrderTaskController"
+    },
+    {
+      "name": "WmsWareOrderTaskDetailController",
+      "description": "WmsWareOrderTaskDetailController"
+    },
+    {
+      "name": "WmsWareOrderTaskDetailController",
+      "description": "WmsWareOrderTaskDetailController"
+    },
+    {
+      "name": "WmsWareOrderTaskDetailController",
+      "description": "WmsWareOrderTaskDetailController"
+    },
+    {
+      "name": "WmsWareOrderTaskDetailController",
+      "description": "WmsWareOrderTaskDetailController"
+    },
+    {
+      "name": "WmsWareSkuController",
+      "description": "WmsWareSkuController"
+    },
+    {
+      "name": "WmsWareSkuController",
+      "description": "WmsWareSkuController"
+    },
+    {
+      "name": "WmsWareSkuController",
+      "description": "WmsWareSkuController"
+    },
+    {
+      "name": "WmsWareSkuController",
+      "description": "WmsWareSkuController"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/undoLog": {
+      "get": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "查询所有UndoLog",
+        "description": "查询所有UndoLog方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UndoLog»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "添加UndoLog",
+        "description": "添加UndoLog方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UndoLog方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UndoLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/undoLog/{id}": {
+      "delete": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "根据ID删除UndoLog",
+        "description": "根据ID删除UndoLog方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UndoLog方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "根据ID修改UndoLog",
+        "description": "根据ID修改UndoLog方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UndoLog方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UndoLog",
+            "description": "传入UndoLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UndoLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "根据ID查询UndoLog",
+        "description": "根据ID查询UndoLog方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UndoLog方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UndoLog»"
+            }
+          }
+        }
+      }
+    },
+    "/undoLog/search": {
+      "post": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "不带分页条件搜索UndoLog",
+        "description": "不带分页条件搜索UndoLog方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UndoLog",
+            "description": "传入UndoLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UndoLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UndoLog»»"
+            }
+          }
+        }
+      }
+    },
+    "/undoLog/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "分页列表查询UndoLog",
+        "description": "分页列表查询UndoLog方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UndoLog»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UndoLogController"
+        ],
+        "summary": "分页条件搜索UndoLog",
+        "description": "分页条件搜索UndoLog方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UndoLog",
+            "description": "传入UndoLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UndoLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UndoLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UndoLog»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchase": {
+      "get": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "查询所有WmsPurchase",
+        "description": "查询所有WmsPurchase方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchase»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "添加WmsPurchase",
+        "description": "添加WmsPurchase方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsPurchase方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchase"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchase/{id}": {
+      "delete": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "根据ID删除WmsPurchase",
+        "description": "根据ID删除WmsPurchase方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsPurchase方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "根据ID修改WmsPurchase",
+        "description": "根据ID修改WmsPurchase方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsPurchase方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsPurchase",
+            "description": "传入WmsPurchase的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchase"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "根据ID查询WmsPurchase",
+        "description": "根据ID查询WmsPurchase方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsPurchase方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsPurchase»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchase/search": {
+      "post": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "不带分页条件搜索WmsPurchase",
+        "description": "不带分页条件搜索WmsPurchase方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsPurchase",
+            "description": "传入WmsPurchase的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchase"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchase»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchase/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "分页列表查询WmsPurchase",
+        "description": "分页列表查询WmsPurchase方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchase»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsPurchaseController"
+        ],
+        "summary": "分页条件搜索WmsPurchase",
+        "description": "分页条件搜索WmsPurchase方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsPurchase",
+            "description": "传入WmsPurchase的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchase"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsPurchase"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchase»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchaseDetail": {
+      "get": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "查询所有WmsPurchaseDetail",
+        "description": "查询所有WmsPurchaseDetail方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchaseDetail»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "添加WmsPurchaseDetail",
+        "description": "添加WmsPurchaseDetail方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsPurchaseDetail方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchaseDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchaseDetail/{id}": {
+      "delete": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "根据ID删除WmsPurchaseDetail",
+        "description": "根据ID删除WmsPurchaseDetail方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsPurchaseDetail方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "根据ID修改WmsPurchaseDetail",
+        "description": "根据ID修改WmsPurchaseDetail方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsPurchaseDetail方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsPurchaseDetail",
+            "description": "传入WmsPurchaseDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchaseDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "根据ID查询WmsPurchaseDetail",
+        "description": "根据ID查询WmsPurchaseDetail方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsPurchaseDetail方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsPurchaseDetail»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchaseDetail/search": {
+      "post": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "不带分页条件搜索WmsPurchaseDetail",
+        "description": "不带分页条件搜索WmsPurchaseDetail方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsPurchaseDetail",
+            "description": "传入WmsPurchaseDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchaseDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchaseDetail»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsPurchaseDetail/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "分页列表查询WmsPurchaseDetail",
+        "description": "分页列表查询WmsPurchaseDetail方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchaseDetail»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsPurchaseDetailController"
+        ],
+        "summary": "分页条件搜索WmsPurchaseDetail",
+        "description": "分页条件搜索WmsPurchaseDetail方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsPurchaseDetail",
+            "description": "传入WmsPurchaseDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsPurchaseDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsPurchaseDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsPurchaseDetail»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareInfo": {
+      "get": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "查询所有WmsWareInfo",
+        "description": "查询所有WmsWareInfo方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareInfo»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "添加WmsWareInfo",
+        "description": "添加WmsWareInfo方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsWareInfo方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareInfo/{id}": {
+      "delete": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "根据ID删除WmsWareInfo",
+        "description": "根据ID删除WmsWareInfo方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsWareInfo方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "根据ID修改WmsWareInfo",
+        "description": "根据ID修改WmsWareInfo方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareInfo方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareInfo",
+            "description": "传入WmsWareInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "根据ID查询WmsWareInfo",
+        "description": "根据ID查询WmsWareInfo方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareInfo方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsWareInfo»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareInfo/search": {
+      "post": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "不带分页条件搜索WmsWareInfo",
+        "description": "不带分页条件搜索WmsWareInfo方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsWareInfo",
+            "description": "传入WmsWareInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareInfo»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareInfo/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "分页列表查询WmsWareInfo",
+        "description": "分页列表查询WmsWareInfo方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareInfo»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareInfoController"
+        ],
+        "summary": "分页条件搜索WmsWareInfo",
+        "description": "分页条件搜索WmsWareInfo方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareInfo",
+            "description": "传入WmsWareInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsWareInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareInfo»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTask": {
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "查询所有WmsWareOrderTask",
+        "description": "查询所有WmsWareOrderTask方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTask»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "添加WmsWareOrderTask",
+        "description": "添加WmsWareOrderTask方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsWareOrderTask方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTask"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTask/{id}": {
+      "delete": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "根据ID删除WmsWareOrderTask",
+        "description": "根据ID删除WmsWareOrderTask方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsWareOrderTask方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "根据ID修改WmsWareOrderTask",
+        "description": "根据ID修改WmsWareOrderTask方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareOrderTask方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareOrderTask",
+            "description": "传入WmsWareOrderTask的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTask"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "根据ID查询WmsWareOrderTask",
+        "description": "根据ID查询WmsWareOrderTask方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareOrderTask方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsWareOrderTask»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTask/search": {
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "不带分页条件搜索WmsWareOrderTask",
+        "description": "不带分页条件搜索WmsWareOrderTask方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsWareOrderTask",
+            "description": "传入WmsWareOrderTask的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTask"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTask»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTask/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "分页列表查询WmsWareOrderTask",
+        "description": "分页列表查询WmsWareOrderTask方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTask»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskController"
+        ],
+        "summary": "分页条件搜索WmsWareOrderTask",
+        "description": "分页条件搜索WmsWareOrderTask方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareOrderTask",
+            "description": "传入WmsWareOrderTask的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTask"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsWareOrderTask"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTask»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTaskDetail": {
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "查询所有WmsWareOrderTaskDetail",
+        "description": "查询所有WmsWareOrderTaskDetail方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTaskDetail»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "添加WmsWareOrderTaskDetail",
+        "description": "添加WmsWareOrderTaskDetail方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsWareOrderTaskDetail方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTaskDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTaskDetail/{id}": {
+      "delete": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "根据ID删除WmsWareOrderTaskDetail",
+        "description": "根据ID删除WmsWareOrderTaskDetail方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsWareOrderTaskDetail方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "根据ID修改WmsWareOrderTaskDetail",
+        "description": "根据ID修改WmsWareOrderTaskDetail方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareOrderTaskDetail方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareOrderTaskDetail",
+            "description": "传入WmsWareOrderTaskDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTaskDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "根据ID查询WmsWareOrderTaskDetail",
+        "description": "根据ID查询WmsWareOrderTaskDetail方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareOrderTaskDetail方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsWareOrderTaskDetail»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTaskDetail/search": {
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "不带分页条件搜索WmsWareOrderTaskDetail",
+        "description": "不带分页条件搜索WmsWareOrderTaskDetail方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsWareOrderTaskDetail",
+            "description": "传入WmsWareOrderTaskDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTaskDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTaskDetail»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareOrderTaskDetail/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "分页列表查询WmsWareOrderTaskDetail",
+        "description": "分页列表查询WmsWareOrderTaskDetail方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTaskDetail»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareOrderTaskDetailController"
+        ],
+        "summary": "分页条件搜索WmsWareOrderTaskDetail",
+        "description": "分页条件搜索WmsWareOrderTaskDetail方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareOrderTaskDetail",
+            "description": "传入WmsWareOrderTaskDetail的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareOrderTaskDetail"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsWareOrderTaskDetail"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareOrderTaskDetail»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareSku": {
+      "get": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "查询所有WmsWareSku",
+        "description": "查询所有WmsWareSku方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareSku»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "添加WmsWareSku",
+        "description": "添加WmsWareSku方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加WmsWareSku方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareSku"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareSku/{id}": {
+      "delete": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "根据ID删除WmsWareSku",
+        "description": "根据ID删除WmsWareSku方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除WmsWareSku方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "根据ID修改WmsWareSku",
+        "description": "根据ID修改WmsWareSku方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareSku方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareSku",
+            "description": "传入WmsWareSku的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareSku"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "根据ID查询WmsWareSku",
+        "description": "根据ID查询WmsWareSku方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改WmsWareSku方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«WmsWareSku»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareSku/search": {
+      "post": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "不带分页条件搜索WmsWareSku",
+        "description": "不带分页条件搜索WmsWareSku方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WmsWareSku",
+            "description": "传入WmsWareSku的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareSku"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareSku»»"
+            }
+          }
+        }
+      }
+    },
+    "/wmsWareSku/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "分页列表查询WmsWareSku",
+        "description": "分页列表查询WmsWareSku方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareSku»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WmsWareSkuController"
+        ],
+        "summary": "分页条件搜索WmsWareSku",
+        "description": "分页条件搜索WmsWareSku方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "WmsWareSku",
+            "description": "传入WmsWareSku的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/WmsWareSku"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索WmsWareSku"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«WmsWareSku»»"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Result": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "object",
+          "description": "逻辑数据"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«List«UndoLog»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UndoLog"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UndoLog»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UndoLog"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UndoLog": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": ""
+        },
+        "branchId": {
+          "type": "long",
+          "description": ""
+        },
+        "xid": {
+          "type": "string",
+          "description": ""
+        },
+        "context": {
+          "type": "string",
+          "description": ""
+        },
+        "rollbackInfo": {
+          "type": "string",
+          "description": ""
+        },
+        "logStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": ""
+        },
+        "logCreated": {
+          "type": "date",
+          "description": ""
+        },
+        "logModified": {
+          "type": "date",
+          "description": ""
+        },
+        "ext": {
+          "type": "string",
+          "description": ""
+        }
+      },
+      "description": "UndoLog"
+    },
+    "Result«List«WmsPurchase»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsPurchase"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsPurchase»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsPurchase"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsPurchase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": ""
+        },
+        "assigneeId": {
+          "type": "long",
+          "description": ""
+        },
+        "assigneeName": {
+          "type": "string",
+          "description": ""
+        },
+        "phone": {
+          "type": "string",
+          "description": ""
+        },
+        "priority": {
+          "type": "integer",
+          "format": "int32",
+          "description": ""
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": ""
+        },
+        "wareId": {
+          "type": "long",
+          "description": ""
+        },
+        "amount": {
+          "type": "string",
+          "description": ""
+        },
+        "createTime": {
+          "type": "date",
+          "description": ""
+        },
+        "updateTime": {
+          "type": "date",
+          "description": ""
+        }
+      },
+      "description": "WmsPurchase"
+    },
+    "Result«List«WmsPurchaseDetail»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsPurchaseDetail"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsPurchaseDetail»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsPurchaseDetail"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsPurchaseDetail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": ""
+        },
+        "purchaseId": {
+          "type": "long",
+          "description": "采购单id"
+        },
+        "skuId": {
+          "type": "long",
+          "description": "采购商品id"
+        },
+        "skuNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "采购数量"
+        },
+        "skuPrice": {
+          "type": "string",
+          "description": "采购金额"
+        },
+        "wareId": {
+          "type": "long",
+          "description": "仓库id"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态[0新建，1已分配，2正在采购，3已完成，4采购失败]"
+        }
+      },
+      "description": "WmsPurchaseDetail"
+    },
+    "Result«List«WmsWareInfo»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsWareInfo"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsWareInfo»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsWareInfo"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsWareInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "仓库名"
+        },
+        "address": {
+          "type": "string",
+          "description": "仓库地址"
+        },
+        "areacode": {
+          "type": "string",
+          "description": "区域编码"
+        }
+      },
+      "description": "WmsWareInfo"
+    },
+    "Result«List«WmsWareOrderTask»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsWareOrderTask"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsWareOrderTask»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsWareOrderTask"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsWareOrderTask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "orderId": {
+          "type": "long",
+          "description": "order_id"
+        },
+        "orderSn": {
+          "type": "string",
+          "description": "order_sn"
+        },
+        "consignee": {
+          "type": "string",
+          "description": "收货人"
+        },
+        "consigneeTel": {
+          "type": "string",
+          "description": "收货人电话"
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "配送地址"
+        },
+        "orderComment": {
+          "type": "string",
+          "description": "订单备注"
+        },
+        "paymentWay": {
+          "type": "string",
+          "description": "付款方式【 1:在线付款 2:货到付款】"
+        },
+        "taskStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "任务状态"
+        },
+        "orderBody": {
+          "type": "string",
+          "description": "订单描述"
+        },
+        "trackingNo": {
+          "type": "string",
+          "description": "物流单号"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "create_time"
+        },
+        "wareId": {
+          "type": "long",
+          "description": "仓库id"
+        },
+        "taskComment": {
+          "type": "string",
+          "description": "工作单备注"
+        }
+      },
+      "description": "WmsWareOrderTask"
+    },
+    "Result«List«WmsWareOrderTaskDetail»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsWareOrderTaskDetail"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsWareOrderTaskDetail»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsWareOrderTaskDetail"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsWareOrderTaskDetail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "skuId": {
+          "type": "long",
+          "description": "sku_id"
+        },
+        "skuName": {
+          "type": "string",
+          "description": "sku_name"
+        },
+        "skuNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "购买个数"
+        },
+        "taskId": {
+          "type": "long",
+          "description": "工作单id"
+        },
+        "wareId": {
+          "type": "long",
+          "description": "仓库id"
+        },
+        "lockStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1-已锁定  2-已解锁  3-扣减"
+        }
+      },
+      "description": "WmsWareOrderTaskDetail"
+    },
+    "Result«List«WmsWareSku»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/WmsWareSku"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«WmsWareSku»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/WmsWareSku"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "WmsWareSku": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "skuId": {
+          "type": "long",
+          "description": "sku_id"
+        },
+        "wareId": {
+          "type": "long",
+          "description": "仓库id"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "库存数"
+        },
+        "skuName": {
+          "type": "string",
+          "description": "sku_name"
+        },
+        "stockLocked": {
+          "type": "integer",
+          "format": "int32",
+          "description": "锁定库存"
+        }
+      },
+      "description": "WmsWareSku"
+    }
+  },
+  "externalDocs": {
+    "description": "黑马训练营畅购微服务商城(http://www.itheima.com)",
+    "url": "https://github.com/shenkunlin/code-template.git"
+  }
+}

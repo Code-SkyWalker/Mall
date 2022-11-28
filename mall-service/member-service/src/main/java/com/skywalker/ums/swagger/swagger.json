@@ -1,0 +1,4874 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "微服务工程代码生成器,生成Dao、Service、Controller、Pojo、Feign、Swagger的JSON脚本",
+    "version": "1.0.0",
+    "title": "深圳黑马训练营代码生成器",
+    "termsOfService": "https://github.com/shenkunlin/code-template.git",
+    "contact": {
+      "email": "shenkunlin@itcast.cn"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+        {
+      "name": "UmsGrowthChangeHistoryController",
+      "description": "UmsGrowthChangeHistoryController"
+    },
+    {
+      "name": "UmsGrowthChangeHistoryController",
+      "description": "UmsGrowthChangeHistoryController"
+    },
+    {
+      "name": "UmsGrowthChangeHistoryController",
+      "description": "UmsGrowthChangeHistoryController"
+    },
+    {
+      "name": "UmsGrowthChangeHistoryController",
+      "description": "UmsGrowthChangeHistoryController"
+    },
+    {
+      "name": "UmsIntegrationChangeHistoryController",
+      "description": "UmsIntegrationChangeHistoryController"
+    },
+    {
+      "name": "UmsIntegrationChangeHistoryController",
+      "description": "UmsIntegrationChangeHistoryController"
+    },
+    {
+      "name": "UmsIntegrationChangeHistoryController",
+      "description": "UmsIntegrationChangeHistoryController"
+    },
+    {
+      "name": "UmsIntegrationChangeHistoryController",
+      "description": "UmsIntegrationChangeHistoryController"
+    },
+    {
+      "name": "UmsMemberController",
+      "description": "UmsMemberController"
+    },
+    {
+      "name": "UmsMemberController",
+      "description": "UmsMemberController"
+    },
+    {
+      "name": "UmsMemberController",
+      "description": "UmsMemberController"
+    },
+    {
+      "name": "UmsMemberController",
+      "description": "UmsMemberController"
+    },
+    {
+      "name": "UmsMemberCollectSpuController",
+      "description": "UmsMemberCollectSpuController"
+    },
+    {
+      "name": "UmsMemberCollectSpuController",
+      "description": "UmsMemberCollectSpuController"
+    },
+    {
+      "name": "UmsMemberCollectSpuController",
+      "description": "UmsMemberCollectSpuController"
+    },
+    {
+      "name": "UmsMemberCollectSpuController",
+      "description": "UmsMemberCollectSpuController"
+    },
+    {
+      "name": "UmsMemberCollectSubjectController",
+      "description": "UmsMemberCollectSubjectController"
+    },
+    {
+      "name": "UmsMemberCollectSubjectController",
+      "description": "UmsMemberCollectSubjectController"
+    },
+    {
+      "name": "UmsMemberCollectSubjectController",
+      "description": "UmsMemberCollectSubjectController"
+    },
+    {
+      "name": "UmsMemberCollectSubjectController",
+      "description": "UmsMemberCollectSubjectController"
+    },
+    {
+      "name": "UmsMemberLevelController",
+      "description": "UmsMemberLevelController"
+    },
+    {
+      "name": "UmsMemberLevelController",
+      "description": "UmsMemberLevelController"
+    },
+    {
+      "name": "UmsMemberLevelController",
+      "description": "UmsMemberLevelController"
+    },
+    {
+      "name": "UmsMemberLevelController",
+      "description": "UmsMemberLevelController"
+    },
+    {
+      "name": "UmsMemberLoginLogController",
+      "description": "UmsMemberLoginLogController"
+    },
+    {
+      "name": "UmsMemberLoginLogController",
+      "description": "UmsMemberLoginLogController"
+    },
+    {
+      "name": "UmsMemberLoginLogController",
+      "description": "UmsMemberLoginLogController"
+    },
+    {
+      "name": "UmsMemberLoginLogController",
+      "description": "UmsMemberLoginLogController"
+    },
+    {
+      "name": "UmsMemberReceiveAddressController",
+      "description": "UmsMemberReceiveAddressController"
+    },
+    {
+      "name": "UmsMemberReceiveAddressController",
+      "description": "UmsMemberReceiveAddressController"
+    },
+    {
+      "name": "UmsMemberReceiveAddressController",
+      "description": "UmsMemberReceiveAddressController"
+    },
+    {
+      "name": "UmsMemberReceiveAddressController",
+      "description": "UmsMemberReceiveAddressController"
+    },
+    {
+      "name": "UmsMemberStatisticsInfoController",
+      "description": "UmsMemberStatisticsInfoController"
+    },
+    {
+      "name": "UmsMemberStatisticsInfoController",
+      "description": "UmsMemberStatisticsInfoController"
+    },
+    {
+      "name": "UmsMemberStatisticsInfoController",
+      "description": "UmsMemberStatisticsInfoController"
+    },
+    {
+      "name": "UmsMemberStatisticsInfoController",
+      "description": "UmsMemberStatisticsInfoController"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/umsGrowthChangeHistory": {
+      "get": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "查询所有UmsGrowthChangeHistory",
+        "description": "查询所有UmsGrowthChangeHistory方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsGrowthChangeHistory»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "添加UmsGrowthChangeHistory",
+        "description": "添加UmsGrowthChangeHistory方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsGrowthChangeHistory方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsGrowthChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsGrowthChangeHistory/{id}": {
+      "delete": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "根据ID删除UmsGrowthChangeHistory",
+        "description": "根据ID删除UmsGrowthChangeHistory方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsGrowthChangeHistory方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "根据ID修改UmsGrowthChangeHistory",
+        "description": "根据ID修改UmsGrowthChangeHistory方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsGrowthChangeHistory方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsGrowthChangeHistory",
+            "description": "传入UmsGrowthChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsGrowthChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "根据ID查询UmsGrowthChangeHistory",
+        "description": "根据ID查询UmsGrowthChangeHistory方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsGrowthChangeHistory方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsGrowthChangeHistory»"
+            }
+          }
+        }
+      }
+    },
+    "/umsGrowthChangeHistory/search": {
+      "post": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "不带分页条件搜索UmsGrowthChangeHistory",
+        "description": "不带分页条件搜索UmsGrowthChangeHistory方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsGrowthChangeHistory",
+            "description": "传入UmsGrowthChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsGrowthChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsGrowthChangeHistory»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsGrowthChangeHistory/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "分页列表查询UmsGrowthChangeHistory",
+        "description": "分页列表查询UmsGrowthChangeHistory方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsGrowthChangeHistory»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsGrowthChangeHistoryController"
+        ],
+        "summary": "分页条件搜索UmsGrowthChangeHistory",
+        "description": "分页条件搜索UmsGrowthChangeHistory方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsGrowthChangeHistory",
+            "description": "传入UmsGrowthChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsGrowthChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsGrowthChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsGrowthChangeHistory»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsIntegrationChangeHistory": {
+      "get": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "查询所有UmsIntegrationChangeHistory",
+        "description": "查询所有UmsIntegrationChangeHistory方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsIntegrationChangeHistory»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "添加UmsIntegrationChangeHistory",
+        "description": "添加UmsIntegrationChangeHistory方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsIntegrationChangeHistory方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsIntegrationChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsIntegrationChangeHistory/{id}": {
+      "delete": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "根据ID删除UmsIntegrationChangeHistory",
+        "description": "根据ID删除UmsIntegrationChangeHistory方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsIntegrationChangeHistory方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "根据ID修改UmsIntegrationChangeHistory",
+        "description": "根据ID修改UmsIntegrationChangeHistory方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsIntegrationChangeHistory方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsIntegrationChangeHistory",
+            "description": "传入UmsIntegrationChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsIntegrationChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "根据ID查询UmsIntegrationChangeHistory",
+        "description": "根据ID查询UmsIntegrationChangeHistory方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsIntegrationChangeHistory方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsIntegrationChangeHistory»"
+            }
+          }
+        }
+      }
+    },
+    "/umsIntegrationChangeHistory/search": {
+      "post": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "不带分页条件搜索UmsIntegrationChangeHistory",
+        "description": "不带分页条件搜索UmsIntegrationChangeHistory方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsIntegrationChangeHistory",
+            "description": "传入UmsIntegrationChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsIntegrationChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsIntegrationChangeHistory»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsIntegrationChangeHistory/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "分页列表查询UmsIntegrationChangeHistory",
+        "description": "分页列表查询UmsIntegrationChangeHistory方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsIntegrationChangeHistory»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsIntegrationChangeHistoryController"
+        ],
+        "summary": "分页条件搜索UmsIntegrationChangeHistory",
+        "description": "分页条件搜索UmsIntegrationChangeHistory方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsIntegrationChangeHistory",
+            "description": "传入UmsIntegrationChangeHistory的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsIntegrationChangeHistory"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsIntegrationChangeHistory"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsIntegrationChangeHistory»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMember": {
+      "get": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "查询所有UmsMember",
+        "description": "查询所有UmsMember方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMember»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "添加UmsMember",
+        "description": "添加UmsMember方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMember方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMember"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMember/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "根据ID删除UmsMember",
+        "description": "根据ID删除UmsMember方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMember方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "根据ID修改UmsMember",
+        "description": "根据ID修改UmsMember方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMember方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMember",
+            "description": "传入UmsMember的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMember"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "根据ID查询UmsMember",
+        "description": "根据ID查询UmsMember方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMember方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMember»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMember/search": {
+      "post": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "不带分页条件搜索UmsMember",
+        "description": "不带分页条件搜索UmsMember方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMember",
+            "description": "传入UmsMember的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMember"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMember»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMember/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "分页列表查询UmsMember",
+        "description": "分页列表查询UmsMember方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMember»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberController"
+        ],
+        "summary": "分页条件搜索UmsMember",
+        "description": "分页条件搜索UmsMember方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMember",
+            "description": "传入UmsMember的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMember"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMember"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMember»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSpu": {
+      "get": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "查询所有UmsMemberCollectSpu",
+        "description": "查询所有UmsMemberCollectSpu方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSpu»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "添加UmsMemberCollectSpu",
+        "description": "添加UmsMemberCollectSpu方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberCollectSpu方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSpu"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSpu/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "根据ID删除UmsMemberCollectSpu",
+        "description": "根据ID删除UmsMemberCollectSpu方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberCollectSpu方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "根据ID修改UmsMemberCollectSpu",
+        "description": "根据ID修改UmsMemberCollectSpu方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberCollectSpu方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSpu",
+            "description": "传入UmsMemberCollectSpu的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSpu"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "根据ID查询UmsMemberCollectSpu",
+        "description": "根据ID查询UmsMemberCollectSpu方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberCollectSpu方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberCollectSpu»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSpu/search": {
+      "post": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberCollectSpu",
+        "description": "不带分页条件搜索UmsMemberCollectSpu方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSpu",
+            "description": "传入UmsMemberCollectSpu的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSpu"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSpu»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSpu/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "分页列表查询UmsMemberCollectSpu",
+        "description": "分页列表查询UmsMemberCollectSpu方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSpu»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberCollectSpuController"
+        ],
+        "summary": "分页条件搜索UmsMemberCollectSpu",
+        "description": "分页条件搜索UmsMemberCollectSpu方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSpu",
+            "description": "传入UmsMemberCollectSpu的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSpu"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberCollectSpu"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSpu»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSubject": {
+      "get": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "查询所有UmsMemberCollectSubject",
+        "description": "查询所有UmsMemberCollectSubject方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSubject»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "添加UmsMemberCollectSubject",
+        "description": "添加UmsMemberCollectSubject方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberCollectSubject方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSubject"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSubject/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "根据ID删除UmsMemberCollectSubject",
+        "description": "根据ID删除UmsMemberCollectSubject方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberCollectSubject方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "根据ID修改UmsMemberCollectSubject",
+        "description": "根据ID修改UmsMemberCollectSubject方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberCollectSubject方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSubject",
+            "description": "传入UmsMemberCollectSubject的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSubject"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "根据ID查询UmsMemberCollectSubject",
+        "description": "根据ID查询UmsMemberCollectSubject方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberCollectSubject方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberCollectSubject»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSubject/search": {
+      "post": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberCollectSubject",
+        "description": "不带分页条件搜索UmsMemberCollectSubject方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSubject",
+            "description": "传入UmsMemberCollectSubject的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSubject"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSubject»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberCollectSubject/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "分页列表查询UmsMemberCollectSubject",
+        "description": "分页列表查询UmsMemberCollectSubject方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSubject»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberCollectSubjectController"
+        ],
+        "summary": "分页条件搜索UmsMemberCollectSubject",
+        "description": "分页条件搜索UmsMemberCollectSubject方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberCollectSubject",
+            "description": "传入UmsMemberCollectSubject的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberCollectSubject"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberCollectSubject"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberCollectSubject»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLevel": {
+      "get": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "查询所有UmsMemberLevel",
+        "description": "查询所有UmsMemberLevel方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLevel»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "添加UmsMemberLevel",
+        "description": "添加UmsMemberLevel方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberLevel方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLevel"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLevel/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "根据ID删除UmsMemberLevel",
+        "description": "根据ID删除UmsMemberLevel方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberLevel方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "根据ID修改UmsMemberLevel",
+        "description": "根据ID修改UmsMemberLevel方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberLevel方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberLevel",
+            "description": "传入UmsMemberLevel的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLevel"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "根据ID查询UmsMemberLevel",
+        "description": "根据ID查询UmsMemberLevel方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberLevel方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberLevel»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLevel/search": {
+      "post": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberLevel",
+        "description": "不带分页条件搜索UmsMemberLevel方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberLevel",
+            "description": "传入UmsMemberLevel的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLevel"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLevel»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLevel/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "分页列表查询UmsMemberLevel",
+        "description": "分页列表查询UmsMemberLevel方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLevel»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberLevelController"
+        ],
+        "summary": "分页条件搜索UmsMemberLevel",
+        "description": "分页条件搜索UmsMemberLevel方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberLevel",
+            "description": "传入UmsMemberLevel的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLevel"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberLevel"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLevel»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLoginLog": {
+      "get": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "查询所有UmsMemberLoginLog",
+        "description": "查询所有UmsMemberLoginLog方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLoginLog»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "添加UmsMemberLoginLog",
+        "description": "添加UmsMemberLoginLog方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberLoginLog方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLoginLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLoginLog/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "根据ID删除UmsMemberLoginLog",
+        "description": "根据ID删除UmsMemberLoginLog方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberLoginLog方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "根据ID修改UmsMemberLoginLog",
+        "description": "根据ID修改UmsMemberLoginLog方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberLoginLog方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberLoginLog",
+            "description": "传入UmsMemberLoginLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLoginLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "根据ID查询UmsMemberLoginLog",
+        "description": "根据ID查询UmsMemberLoginLog方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberLoginLog方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberLoginLog»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLoginLog/search": {
+      "post": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberLoginLog",
+        "description": "不带分页条件搜索UmsMemberLoginLog方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberLoginLog",
+            "description": "传入UmsMemberLoginLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLoginLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLoginLog»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberLoginLog/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "分页列表查询UmsMemberLoginLog",
+        "description": "分页列表查询UmsMemberLoginLog方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLoginLog»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberLoginLogController"
+        ],
+        "summary": "分页条件搜索UmsMemberLoginLog",
+        "description": "分页条件搜索UmsMemberLoginLog方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberLoginLog",
+            "description": "传入UmsMemberLoginLog的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberLoginLog"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberLoginLog"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberLoginLog»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberReceiveAddress": {
+      "get": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "查询所有UmsMemberReceiveAddress",
+        "description": "查询所有UmsMemberReceiveAddress方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberReceiveAddress»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "添加UmsMemberReceiveAddress",
+        "description": "添加UmsMemberReceiveAddress方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberReceiveAddress方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberReceiveAddress"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberReceiveAddress/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "根据ID删除UmsMemberReceiveAddress",
+        "description": "根据ID删除UmsMemberReceiveAddress方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberReceiveAddress方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "根据ID修改UmsMemberReceiveAddress",
+        "description": "根据ID修改UmsMemberReceiveAddress方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberReceiveAddress方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberReceiveAddress",
+            "description": "传入UmsMemberReceiveAddress的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberReceiveAddress"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "根据ID查询UmsMemberReceiveAddress",
+        "description": "根据ID查询UmsMemberReceiveAddress方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberReceiveAddress方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberReceiveAddress»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberReceiveAddress/search": {
+      "post": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberReceiveAddress",
+        "description": "不带分页条件搜索UmsMemberReceiveAddress方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberReceiveAddress",
+            "description": "传入UmsMemberReceiveAddress的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberReceiveAddress"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberReceiveAddress»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberReceiveAddress/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "分页列表查询UmsMemberReceiveAddress",
+        "description": "分页列表查询UmsMemberReceiveAddress方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberReceiveAddress»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberReceiveAddressController"
+        ],
+        "summary": "分页条件搜索UmsMemberReceiveAddress",
+        "description": "分页条件搜索UmsMemberReceiveAddress方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberReceiveAddress",
+            "description": "传入UmsMemberReceiveAddress的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberReceiveAddress"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberReceiveAddress"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberReceiveAddress»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberStatisticsInfo": {
+      "get": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "查询所有UmsMemberStatisticsInfo",
+        "description": "查询所有UmsMemberStatisticsInfo方法详情",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "查询所有UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberStatisticsInfo»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "添加UmsMemberStatisticsInfo",
+        "description": "添加UmsMemberStatisticsInfo方法详情",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "添加UmsMemberStatisticsInfo方法详情",
+            "required": true
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberStatisticsInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "添加UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberStatisticsInfo/{id}": {
+      "delete": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "根据ID删除UmsMemberStatisticsInfo",
+        "description": "根据ID删除UmsMemberStatisticsInfo方法详情",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID删除UmsMemberStatisticsInfo方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID删除UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "根据ID修改UmsMemberStatisticsInfo",
+        "description": "根据ID修改UmsMemberStatisticsInfo方法详情",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberStatisticsInfo方法详情",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberStatisticsInfo",
+            "description": "传入UmsMemberStatisticsInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberStatisticsInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "根据ID查询UmsMemberStatisticsInfo",
+        "description": "根据ID查询UmsMemberStatisticsInfo方法详情",
+        "operationId": "findByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "根据ID修改UmsMemberStatisticsInfo方法详情",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "根据ID修改UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«UmsMemberStatisticsInfo»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberStatisticsInfo/search": {
+      "post": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "不带分页条件搜索UmsMemberStatisticsInfo",
+        "description": "不带分页条件搜索UmsMemberStatisticsInfo方法详情",
+        "operationId": "findListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UmsMemberStatisticsInfo",
+            "description": "传入UmsMemberStatisticsInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberStatisticsInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberStatisticsInfo»»"
+            }
+          }
+        }
+      }
+    },
+    "/umsMemberStatisticsInfo/search/{page}/{size}": {
+      "get": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "分页列表查询UmsMemberStatisticsInfo",
+        "description": "分页列表查询UmsMemberStatisticsInfo方法详情",
+        "operationId": "findPageUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "不带分页搜索UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberStatisticsInfo»»"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UmsMemberStatisticsInfoController"
+        ],
+        "summary": "分页条件搜索UmsMemberStatisticsInfo",
+        "description": "分页条件搜索UmsMemberStatisticsInfo方法详情",
+        "operationId": "findPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "description": "当前页",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "size",
+            "description": "每页显示条数",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "UmsMemberStatisticsInfo",
+            "description": "传入UmsMemberStatisticsInfo的JSON对象",
+            "required": false
+              ,
+              "schema": {
+                "$ref": "#/definitions/UmsMemberStatisticsInfo"
+              }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid status value(无效的状态值)"
+                      },
+          "403": {
+            "description": "403 Forbidden(请求被拒绝)"
+                      },
+          "404": {
+            "description": "not found(没有找到相关资源)"
+                      },
+          "405": {
+            "description": "Invalid input(无效的输入)"
+                      },
+          "500": {
+            "description": "服务器内部错误"
+                      },
+          "200": {
+            "description": "分页条件搜索UmsMemberStatisticsInfo"
+            ,
+            "schema": {
+              "$ref": "#/definitions/Result«List«UmsMemberStatisticsInfo»»"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Result": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "object",
+          "description": "逻辑数据"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«List«UmsGrowthChangeHistory»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsGrowthChangeHistory"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsGrowthChangeHistory»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsGrowthChangeHistory"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsGrowthChangeHistory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "member_id"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "create_time"
+        },
+        "changeCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "改变的值（正负计数）"
+        },
+        "note": {
+          "type": "string",
+          "description": "备注"
+        },
+        "sourceType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "积分来源[0-购物，1-管理员修改]"
+        }
+      },
+      "description": "UmsGrowthChangeHistory"
+    },
+    "Result«List«UmsIntegrationChangeHistory»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsIntegrationChangeHistory"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsIntegrationChangeHistory»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsIntegrationChangeHistory"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsIntegrationChangeHistory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "member_id"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "create_time"
+        },
+        "changeCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "变化的值"
+        },
+        "note": {
+          "type": "string",
+          "description": "备注"
+        },
+        "sourceTyoe": {
+          "type": "integer",
+          "format": "int32",
+          "description": "来源[0->购物；1->管理员修改;2->活动]"
+        }
+      },
+      "description": "UmsIntegrationChangeHistory"
+    },
+    "Result«List«UmsMember»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMember"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMember»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMember"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMember": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "levelId": {
+          "type": "long",
+          "description": "会员等级id"
+        },
+        "username": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号码"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "header": {
+          "type": "string",
+          "description": "头像"
+        },
+        "gender": {
+          "type": "integer",
+          "format": "int32",
+          "description": "性别"
+        },
+        "birth": {
+          "type": "date",
+          "description": "生日"
+        },
+        "city": {
+          "type": "string",
+          "description": "所在城市"
+        },
+        "job": {
+          "type": "string",
+          "description": "职业"
+        },
+        "sign": {
+          "type": "string",
+          "description": "个性签名"
+        },
+        "sourceType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "用户来源"
+        },
+        "integration": {
+          "type": "integer",
+          "format": "int32",
+          "description": "积分"
+        },
+        "growth": {
+          "type": "integer",
+          "format": "int32",
+          "description": "成长值"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "启用状态"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "注册时间"
+        }
+      },
+      "description": "UmsMember"
+    },
+    "Result«List«UmsMemberCollectSpu»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberCollectSpu"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberCollectSpu»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberCollectSpu"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberCollectSpu": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "会员id"
+        },
+        "spuId": {
+          "type": "long",
+          "description": "spu_id"
+        },
+        "spuName": {
+          "type": "string",
+          "description": "spu_name"
+        },
+        "spuImg": {
+          "type": "string",
+          "description": "spu_img"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "create_time"
+        }
+      },
+      "description": "UmsMemberCollectSpu"
+    },
+    "Result«List«UmsMemberCollectSubject»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberCollectSubject"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberCollectSubject»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberCollectSubject"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberCollectSubject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "subjectId": {
+          "type": "long",
+          "description": "subject_id"
+        },
+        "subjectName": {
+          "type": "string",
+          "description": "subject_name"
+        },
+        "subjectImg": {
+          "type": "string",
+          "description": "subject_img"
+        },
+        "subjectUrll": {
+          "type": "string",
+          "description": "活动url"
+        }
+      },
+      "description": "UmsMemberCollectSubject"
+    },
+    "Result«List«UmsMemberLevel»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberLevel"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberLevel»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberLevel"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberLevel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "等级名称"
+        },
+        "growthPoint": {
+          "type": "integer",
+          "format": "int32",
+          "description": "等级需要的成长值"
+        },
+        "defaultStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否为默认等级[0->不是；1->是]"
+        },
+        "freeFreightPoint": {
+          "type": "string",
+          "description": "免运费标准"
+        },
+        "commentGrowthPoint": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每次评价获取的成长值"
+        },
+        "priviledgeFreeFreight": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否有免邮特权"
+        },
+        "priviledgeMemberPrice": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否有会员价格特权"
+        },
+        "priviledgeBirthday": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否有生日特权"
+        },
+        "note": {
+          "type": "string",
+          "description": "备注"
+        }
+      },
+      "description": "UmsMemberLevel"
+    },
+    "Result«List«UmsMemberLoginLog»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberLoginLog"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberLoginLog»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberLoginLog"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberLoginLog": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "member_id"
+        },
+        "createTime": {
+          "type": "date",
+          "description": "创建时间"
+        },
+        "ip": {
+          "type": "string",
+          "description": "ip"
+        },
+        "city": {
+          "type": "string",
+          "description": "city"
+        },
+        "loginType": {
+          "type": "string",
+          "description": "登录类型[1-web，2-app]"
+        }
+      },
+      "description": "UmsMemberLoginLog"
+    },
+    "Result«List«UmsMemberReceiveAddress»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberReceiveAddress"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberReceiveAddress»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberReceiveAddress"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberReceiveAddress": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "member_id"
+        },
+        "name": {
+          "type": "string",
+          "description": "收货人姓名"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "邮政编码"
+        },
+        "province": {
+          "type": "string",
+          "description": "省份/直辖市"
+        },
+        "city": {
+          "type": "string",
+          "description": "城市"
+        },
+        "region": {
+          "type": "string",
+          "description": "区"
+        },
+        "detailAddress": {
+          "type": "string",
+          "description": "详细地址(街道)"
+        },
+        "areacode": {
+          "type": "string",
+          "description": "省市区代码"
+        },
+        "defaultStatus": {
+          "type": "string",
+          "description": "是否默认"
+        }
+      },
+      "description": "UmsMemberReceiveAddress"
+    },
+    "Result«List«UmsMemberStatisticsInfo»»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "type": "array",
+          "description": "逻辑数据",
+          "items": {
+            "$ref": "#/definitions/UmsMemberStatisticsInfo"
+          }
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "Result«UmsMemberStatisticsInfo»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "flag",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回状态码,20000:成功,20001:失败,20002:用户名或密码错误,20003:权限不足,20004:远程调用失败,20005:重复操作,20006:没有对应的数据"
+        },
+        "data": {
+          "description": "逻辑数据",
+          "$ref": "#/definitions/UmsMemberStatisticsInfo"
+        },
+        "flag": {
+          "type": "boolean",
+          "example": false,
+          "description": "执行是否成功,true:成功,false:失败"
+        },
+        "message": {
+          "type": "string",
+          "description": "提示信息"
+        }
+      },
+      "description": "Result"
+    },
+    "UmsMemberStatisticsInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "long",
+          "description": "id"
+        },
+        "memberId": {
+          "type": "long",
+          "description": "会员id"
+        },
+        "consumeAmount": {
+          "type": "string",
+          "description": "累计消费金额"
+        },
+        "couponAmount": {
+          "type": "string",
+          "description": "累计优惠金额"
+        },
+        "orderCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单数量"
+        },
+        "couponCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券数量"
+        },
+        "commentCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "评价数"
+        },
+        "returnOrderCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "退货数量"
+        },
+        "loginCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "登录次数"
+        },
+        "attendCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关注数量"
+        },
+        "fansCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "粉丝数量"
+        },
+        "collectProductCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收藏的商品数量"
+        },
+        "collectSubjectCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收藏的专题活动数量"
+        },
+        "collectCommentCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收藏的评论数量"
+        },
+        "inviteFriendCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "邀请的朋友数量"
+        }
+      },
+      "description": "UmsMemberStatisticsInfo"
+    }
+  },
+  "externalDocs": {
+    "description": "黑马训练营畅购微服务商城(http://www.itheima.com)",
+    "url": "https://github.com/shenkunlin/code-template.git"
+  }
+}

@@ -17,11 +17,11 @@
     </modules>
 
     <groupId>com.skywalker</groupId>
-    <artifactId>Guli_Mall</artifactId>
+    <artifactId>mall</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Guli_Mall</name>
+    <name>mall</name>
     <description>Guli_Mall</description>
 
     <properties>

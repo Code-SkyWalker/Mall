@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: coupon-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: dev
+        namespace: 495c3cc5-d52a-48cd-97d5-310857fb69dc
+        file-extension: yml

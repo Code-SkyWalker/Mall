@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ware-service-config
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: dev
+        namespace: 97c9b91d-b1ec-4b7f-ba5f-51b338a6f328
+        file-extension: yml

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: order-service-config
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: dev
+        namespace: af0d319b-ff8e-493a-97a1-55f6cffb4311
+        file-extension: yml

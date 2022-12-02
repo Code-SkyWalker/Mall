@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: member-service-config
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: dev
+        namespace: 4c292544-5f94-4e46-a0e3-52789174cded
+        file-extension: yml

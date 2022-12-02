@@ -1,15 +1,8 @@
 server:
   port: 18085
 spring:
-  application:
-    name: wms
-
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       username: root
       password: 520@lin00
@@ -40,4 +33,12 @@ spring:
         wall:
           config:
             multi-statement-allow: true
-    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: ware-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+

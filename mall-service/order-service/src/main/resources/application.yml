@@ -34,7 +34,7 @@ spring:
             multi-statement-allow: true
     type: com.alibaba.druid.pool.DruidDataSource
   application:
-    name: oms
+    name: order-service
   cloud:
     nacos:
       discovery:

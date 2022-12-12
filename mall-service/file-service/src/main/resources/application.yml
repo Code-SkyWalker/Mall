@@ -1,0 +1,13 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: file-service
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848

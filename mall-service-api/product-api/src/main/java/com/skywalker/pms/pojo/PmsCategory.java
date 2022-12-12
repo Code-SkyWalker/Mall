@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -50,6 +51,6 @@ public class PmsCategory implements Serializable{
     @Column(name = "product_count")
 	private Integer productCount;//商品数量
 
-
-
+    @Transient
+    private List<PmsCategory> children;
 }

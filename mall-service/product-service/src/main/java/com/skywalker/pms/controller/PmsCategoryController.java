@@ -1,8 +1,9 @@
 package com.skywalker.pms.controller;
+
 import com.skywalker.pms.pojo.PmsCategory;
 import com.skywalker.pms.service.PmsCategoryService;
 import com.github.pagehelper.PageInfo;
-import com.skywalker.entity.Result ;
+import com.skywalker.entity.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/pmsCategory")
-@CrossOrigin
+@RequestMapping("/category")
+//@CrossOrigin
 public class PmsCategoryController {
 
     @Autowired
@@ -25,13 +26,13 @@ public class PmsCategoryController {
 
     /***
      * PmsCategory分页条件搜索实现
-     * @param pmsCategory
-     * @param page
-     * @param size
-     * @return
+     * @param pmsCategory /
+     * @param page /
+     * @param size /
+     * @return /
      */
-    @PostMapping(value = "/search/{page}/{size}" )
-    public Result findPage(@RequestBody(required = false)  PmsCategory pmsCategory, @PathVariable  int page, @PathVariable  int size){
+    @PostMapping(value = "/search/{page}/{size}")
+    public Result findPage(@RequestBody(required = false) PmsCategory pmsCategory, @PathVariable int page, @PathVariable int size) {
         //调用PmsCategoryService实现分页条件查询PmsCategory
         PageInfo<PmsCategory> pageInfo = pmsCategoryService.findPage(pmsCategory, page, size);
         return Result.ok("查询成功", pageInfo);
@@ -41,10 +42,10 @@ public class PmsCategoryController {
      * PmsCategory分页搜索实现
      * @param page:当前页
      * @param size:每页显示多少条
-     * @return
+     * @return /
      */
-    @GetMapping(value = "/search/{page}/{size}" )
-    public Result findPage(@PathVariable  int page, @PathVariable  int size){
+    @GetMapping(value = "/search/{page}/{size}")
+    public Result findPage(@PathVariable int page, @PathVariable int size) {
         //调用PmsCategoryService实现分页查询PmsCategory
         PageInfo<PmsCategory> pageInfo = pmsCategoryService.findPage(page, size);
         return Result.ok("查询成功", pageInfo);
@@ -52,11 +53,11 @@ public class PmsCategoryController {
 
     /***
      * 多条件搜索品牌数据
-     * @param pmsCategory
-     * @return
+     * @param pmsCategory /
+     * @return /
      */
-    @PostMapping(value = "/search" )
-    public Result findList(@RequestBody(required = false)  PmsCategory pmsCategory){
+    @PostMapping(value = "/search")
+    public Result findList(@RequestBody(required = false) PmsCategory pmsCategory) {
         //调用PmsCategoryService实现条件查询PmsCategory
         List<PmsCategory> list = pmsCategoryService.findList(pmsCategory);
         return Result.ok("查询成功", list);
@@ -64,24 +65,36 @@ public class PmsCategoryController {
 
     /***
      * 根据ID删除品牌数据
-     * @param id
-     * @return
+     * @param id /
+     * @return /
      */
-    @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Long id){
+    @DeleteMapping(value = "/{id}")
+    public Result delete(@PathVariable Long id) {
         //调用PmsCategoryService实现根据主键删除
         pmsCategoryService.delete(id);
         return Result.ok("删除成功");
     }
 
     /***
-     * 修改PmsCategory数据
-     * @param pmsCategory
-     * @param id
-     * @return
+     * 根据ID删除品牌数据
+     * @param ids /
+     * @return /
      */
-    @PutMapping(value="/{id}")
-    public Result update(@RequestBody  PmsCategory pmsCategory,@PathVariable Long id){
+    @PostMapping(value = "/delete")
+    public Result delete(@RequestBody List<Long> ids) {
+        //调用PmsCategoryService实现根据主键删除
+        pmsCategoryService.delete(ids);
+        return Result.ok("删除成功");
+    }
+
+    /***
+     * 修改PmsCategory数据
+     * @param pmsCategory /
+     * @param id /
+     * @return /
+     */
+    @PutMapping(value = "/{id}")
+    public Result update(@RequestBody PmsCategory pmsCategory, @PathVariable Long id) {
         //设置主键值
         pmsCategory.setCatId(id);
         //调用PmsCategoryService实现修改PmsCategory
@@ -91,11 +104,11 @@ public class PmsCategoryController {
 
     /***
      * 新增PmsCategory数据
-     * @param pmsCategory
-     * @return
+     * @param pmsCategory /
+     * @return /
      */
     @PostMapping
-    public Result add(@RequestBody   PmsCategory pmsCategory){
+    public Result add(@RequestBody PmsCategory pmsCategory) {
         //调用PmsCategoryService实现添加PmsCategory
         pmsCategoryService.add(pmsCategory);
         return Result.ok("添加成功");
@@ -103,24 +116,24 @@ public class PmsCategoryController {
 
     /***
      * 根据ID查询PmsCategory数据
-     * @param id
-     * @return
+     * @param id /
+     * @return /
      */
     @GetMapping("/{id}")
-    public Result findById(@PathVariable Long id){
+    public Result findById(@PathVariable Long id) {
         //调用PmsCategoryService实现根据主键查询PmsCategory
         PmsCategory pmsCategory = pmsCategoryService.findById(id);
-        return Result.ok("查询成功", pmsCategory);
+        return Result.ok("查询成功").put("category", pmsCategory);
     }
 
     /***
      * 查询PmsCategory全部数据
-     * @return
+     * @return /
      */
     @GetMapping
-    public Result findAll(){
+    public Result findAll() {
         //调用PmsCategoryService实现查询所有PmsCategory
         List<PmsCategory> list = pmsCategoryService.findAll();
-        return Result.ok("查询成功", list) ;
+        return Result.ok("查询成功", list);
     }
 }

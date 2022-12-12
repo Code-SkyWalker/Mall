@@ -39,6 +39,12 @@ public interface PmsCategoryService {
      */
     void delete(Long id);
 
+    /**
+     * 批量删除
+     * @param ids 多个id
+     */
+    void delete(List<Long> ids);
+
     /***
      * 修改PmsCategory数据
      * @param pmsCategory
@@ -63,4 +69,10 @@ public interface PmsCategoryService {
      * @return
      */
     List<PmsCategory> findAll();
+
+    /**
+     * 查询出所有菜单，包装成树形结构
+     * @return
+     */
+    List<PmsCategory> listWithTree();
 }

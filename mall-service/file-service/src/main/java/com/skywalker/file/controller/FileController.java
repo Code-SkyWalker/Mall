@@ -28,16 +28,18 @@ public class FileController {
      */
     @PostMapping("/upload")
     public Result fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
+        String originalFilename = file.getOriginalFilename();
         // 封装一个FastDFSFile对象
         FastDFSFile DFSFile = new FastDFSFile(
-                file.getOriginalFilename(),
+                originalFilename,
                 file.getBytes(),
-                StringUtils.getFilenameExtension(file.getOriginalFilename())
+                StringUtils.getFilenameExtension(originalFilename)
         );
 
         String[] upload = FastDFSClient.upload(DFSFile);
 
-        return Result.ok("上传成功", FastDFSClient.getTrackerURL() + "/" + upload[0] + "/" + upload[1]);
+        return Result.ok("上传成功", FastDFSClient.getTrackerURL() + "/" + upload[0] + "/" + upload[1])
+                .put("filename", originalFilename);
     }
 
 

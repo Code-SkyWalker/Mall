@@ -28,39 +28,69 @@ public interface PmsAttrGroupService {
 
     /***
      * PmsAttrGroup多条件搜索方法
-     * @param pmsAttrGroup
-     * @return
+     * @param pmsAttrGroup /
+     * @return /
      */
     List<PmsAttrGroup> findList(PmsAttrGroup pmsAttrGroup);
 
     /***
      * 删除PmsAttrGroup
-     * @param id
+     * @param id /
      */
     void delete(Long id);
 
+    /**
+     * 批量删除
+     * @param ids /
+     */
+    void deleteByIds(List<Long> ids);
+
     /***
      * 修改PmsAttrGroup数据
-     * @param pmsAttrGroup
+     * @param pmsAttrGroup /
      */
     void update(PmsAttrGroup pmsAttrGroup);
 
     /***
      * 新增PmsAttrGroup
-     * @param pmsAttrGroup
+     * @param pmsAttrGroup /
      */
     void add(PmsAttrGroup pmsAttrGroup);
 
     /**
      * 根据ID查询PmsAttrGroup
-     * @param id
-     * @return
+     * @param id attrGroupId
+     * @return /
      */
      PmsAttrGroup findById(Long id);
 
     /***
      * 查询所有PmsAttrGroup
-     * @return
+     * @return /
      */
     List<PmsAttrGroup> findAll();
+
+    /**
+     * 根据分类ID查询 attrGroup
+     *
+     * @param catId 分类ID
+     * @param page
+     * @param size
+     * @return /
+     */
+    List<PmsAttrGroup> findAttrGroupByCategoryId(Long catId, int page, int size);
+
+    /**
+     * 根据分类ID查询 attrGroup
+     * @param catId
+     * @return
+     */
+    List<PmsAttrGroup> findAttrGroupByCategoryId(Long catId);
+
+    /**
+     * 查询该分类下所有 属性组 的数量
+     * @param catId 分类ID
+     * @return count
+     */
+    int findBrandByCategoryIdCount(Long catId);
 }

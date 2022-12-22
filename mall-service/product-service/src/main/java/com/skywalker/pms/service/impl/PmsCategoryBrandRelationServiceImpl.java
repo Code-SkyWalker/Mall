@@ -1,5 +1,7 @@
 package com.skywalker.pms.service.impl;
 import com.skywalker.pms.dao.PmsCategoryBrandRelationMapper;
+import com.skywalker.pms.pojo.PmsBrand;
+import com.skywalker.pms.pojo.PmsCategory;
 import com.skywalker.pms.pojo.PmsCategoryBrandRelation;
 import com.skywalker.pms.service.PmsCategoryBrandRelationService;
 import com.github.pagehelper.PageHelper;
@@ -8,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -17,7 +21,7 @@ import java.util.List;
 @Service
 public class PmsCategoryBrandRelationServiceImpl implements PmsCategoryBrandRelationService {
 
-    @Autowired
+    @Resource
     private PmsCategoryBrandRelationMapper pmsCategoryBrandRelationMapper;
 
 
@@ -109,12 +113,25 @@ public class PmsCategoryBrandRelationServiceImpl implements PmsCategoryBrandRela
     }
 
     /**
+     * 批量删除
+     *
+     * @param ids 多个id
+     */
+    @Override
+    public void delete(List<Long> ids) {
+        Example example = new Example(PmsCategoryBrandRelation.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andIn("id", ids);
+        pmsCategoryBrandRelationMapper.deleteByExample(example);
+    }
+
+    /**
      * 修改PmsCategoryBrandRelation
      * @param pmsCategoryBrandRelation
      */
     @Override
     public void update(PmsCategoryBrandRelation pmsCategoryBrandRelation){
-        pmsCategoryBrandRelationMapper.updateByPrimaryKey(pmsCategoryBrandRelation);
+        pmsCategoryBrandRelationMapper.updateByPrimaryKeySelective(pmsCategoryBrandRelation);
     }
 
     /**
@@ -143,5 +160,15 @@ public class PmsCategoryBrandRelationServiceImpl implements PmsCategoryBrandRela
     @Override
     public List<PmsCategoryBrandRelation> findAll() {
         return pmsCategoryBrandRelationMapper.selectAll();
+    }
+
+    /**
+     * 根据 分类ID 查询品牌列表
+     * @param catId 分类ID
+     * @return 品牌list
+     */
+    @Override
+    public List<PmsBrand> findBrandsByCategoryId(Long catId) {
+        return pmsCategoryBrandRelationMapper.findBrandsByCategoryId(catId);
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -17,7 +19,7 @@ import java.util.List;
 @Service
 public class PmsBrandServiceImpl implements PmsBrandService {
 
-    @Autowired
+    @Resource
     private PmsBrandMapper pmsBrandMapper;
 
 
@@ -116,6 +118,19 @@ public class PmsBrandServiceImpl implements PmsBrandService {
         pmsBrandMapper.deleteByPrimaryKey(id);
     }
 
+    /***
+     * 批量删除PmsBrand
+     * @param ids
+     */
+    @Override
+    public void deleteByIds(List<Long> ids) {
+        Example example = new Example(PmsBrand.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andIn("brandId", ids);
+
+        pmsBrandMapper.deleteByExample(example);
+    }
+
     /**
      * 修改PmsBrand
      * @param pmsBrand
@@ -151,5 +166,30 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     @Override
     public List<PmsBrand> findAll() {
         return pmsBrandMapper.selectAll();
+    }
+
+    /**
+     * 根据 categoryID 查询 品牌
+     *
+     * @param categoryId 商品分类ID
+     * @param page
+     * @param size
+     * @return /
+     */
+    @Override
+    public List<PmsBrand> findBrandByCategoryId(Long categoryId, int page, int size) {
+        page = (page - 1) * size;
+        return pmsBrandMapper.findBrandByCategoryId(categoryId, page, size);
+    }
+
+    /**
+     * 根据 categoryID 查询 品牌 获取总数
+     *
+     * @param categoryId 商品分类ID
+     * @return /
+     */
+    @Override
+    public int findBrandByCategoryIdCount(Long categoryId) {
+        return pmsBrandMapper.findBrandByCategoryIdCount(categoryId);
     }
 }

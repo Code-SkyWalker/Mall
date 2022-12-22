@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
+
 /**
  * @Author Code SkyWalker
  * @Classname PmsAttrGroupServiceImpl
@@ -17,7 +21,7 @@ import java.util.List;
 @Service
 public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
 
-    @Autowired
+    @Resource
     private PmsAttrGroupMapper pmsAttrGroupMapper;
 
 
@@ -113,6 +117,19 @@ public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
     }
 
     /**
+     * 批量删除
+     *
+     * @param ids
+     */
+    @Override
+    public void deleteByIds(List<Long> ids) {
+        Example example = new Example(PmsAttrGroup.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andIn("attrGroupId", ids);
+        pmsAttrGroupMapper.deleteByExample(example);
+    }
+
+    /**
      * 修改PmsAttrGroup
      * @param pmsAttrGroup
      */
@@ -147,5 +164,44 @@ public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
     @Override
     public List<PmsAttrGroup> findAll() {
         return pmsAttrGroupMapper.selectAll();
+    }
+
+    /**
+     * 根据分类ID查询 attrGroup
+     *
+     * @param catId 分类ID
+     * @param page
+     * @param size
+     * @return /
+     */
+    @Override
+    public List<PmsAttrGroup> findAttrGroupByCategoryId(Long catId, int page, int size) {
+        return pmsAttrGroupMapper.findAttrGroupByCategoryId(catId, (page - 1) * size, size);
+    }
+
+    /**
+     * 根据分类ID查询 attrGroup
+     *
+     * @param catId
+     * @return
+     */
+    @Override
+    public List<PmsAttrGroup> findAttrGroupByCategoryId(Long catId) {
+        if (Objects.isNull(catId)) return null;
+        Example example = new Example(PmsAttrGroup.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("catelogId", catId);
+        return pmsAttrGroupMapper.selectByExample(example);
+    }
+
+    /**
+     * 查询该分类下所有 属性组 的数量
+     *
+     * @param catId 分类ID
+     * @return count
+     */
+    @Override
+    public int findBrandByCategoryIdCount(Long catId) {
+        return pmsAttrGroupMapper.findBrandByCategoryIdCount(catId);
     }
 }

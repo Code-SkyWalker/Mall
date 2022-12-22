@@ -16,8 +16,8 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/pmsSpuInfo")
-@CrossOrigin
+@RequestMapping("/spuInfo")
+//@CrossOrigin
 public class PmsSpuInfoController {
 
     @Autowired

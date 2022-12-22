@@ -1,4 +1,5 @@
 package com.skywalker.pms.service;
+import com.skywalker.pms.pojo.PmsBrand;
 import com.skywalker.pms.pojo.PmsCategory;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
@@ -75,4 +76,5 @@ public interface PmsCategoryService {
      * @return
      */
     List<PmsCategory> listWithTree();
+
 }

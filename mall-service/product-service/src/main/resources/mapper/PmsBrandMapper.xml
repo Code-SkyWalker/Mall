@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.skywalker.pms.dao.PmsBrandMapper">
+
+    <resultMap id="BrandResultMap" type="com.skywalker.pms.pojo.PmsBrand">
+        <result property="brandId" column="brand_id" />
+        <result property="name" column="name" />
+        <result property="logo" column="logo" />
+        <result property="descript" column="descript" />
+        <result property="showStatus" column="show_status" />
+        <result property="firstLetter" column="first_letter" />
+        <result property="sort" column="sort" />
+    </resultMap>
+
+    <sql id="recursive">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{categoryId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT DISTINCT c.*
+        FROM recursion a, pms_category_brand_relation b, pms_brand c
+        WHERE a.cat_id = b.catelog_id AND c.brand_id = b.brand_id
+    </sql>
+
+    <select id="findBrandByCategoryId" resultType="com.skywalker.pms.pojo.PmsBrand" resultMap="BrandResultMap">
+        <include refid="recursive" />
+        LIMIT #{page}, #{size}
+    </select>
+    <select id="findBrandByCategoryIdCount" resultType="java.lang.Integer">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{categoryId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT count(DISTINCT c.brand_id)
+        FROM recursion a, pms_category_brand_relation b, pms_brand c
+        WHERE a.cat_id = b.catelog_id AND c.brand_id = b.brand_id
+    </select>
+
+
+</mapper>

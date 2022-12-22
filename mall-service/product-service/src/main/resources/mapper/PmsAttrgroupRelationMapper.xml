@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.skywalker.pms.dao.PmsAttrAttrgroupRelationMapper">
+
+    <resultMap id="PmsAttr" type="com.skywalker.pms.pojo.PmsAttr" >
+        <id property="attrId" column="attr_id" />
+        <result property="attrName" column="attr_name" />
+        <result property="searchType" column="search_type" />
+        <result property="valueSelect" column="value_select" />
+        <result property="showDesc" column="show_desc" />
+        <result property="icon" column="icon" />
+        <result property="enable" column="enable" />
+        <result property="catelogId" column="catelog_id" />
+        <result property="valueType" column="value_type" />
+    </resultMap>
+
+    <sql id="getRelatedAttr">
+        SELECT a.*
+        FROM pms_attr a
+                 left JOIN pms_attr_attrgroup_relation b
+                           ON a.attr_id = b.attr_id
+        <where>
+            b.attr_group_id = #{attrGroupId}
+            <if test="attrName != null and attrName != ''" >
+                AND attr_name like '${'%' + attrName + '%'}'
+            </if>
+        </where>
+    </sql>
+
+    <select id="getRelatedAttr" resultMap="PmsAttr">
+        <include refid="getRelatedAttr" />
+        limit ${(page - 1) * size}, #{size}
+    </select>
+    <select id="relatedAttrCount" resultType="java.lang.Integer">
+        SELECT count(a.attr_id)
+        FROM pms_attr a
+                 left JOIN pms_attr_attrgroup_relation b
+                           ON a.attr_id = b.attr_id
+        WHERE b.attr_group_id = #{attrGroupId}
+    </select>
+
+
+    <insert id="insertAsList">
+        insert into `pms_attr_attrgroup_relation`(`attr_id`, `attr_group_id`) values
+        <foreach collection="attrIds" separator="," item="item">
+            (#{item}, #{attrGroupId})
+        </foreach>
+    </insert>
+
+</mapper>

@@ -40,6 +40,13 @@ public interface PmsBrandService {
     void delete(Long id);
 
     /***
+     * 批量删除PmsBrand
+     * @param ids
+     */
+    void deleteByIds(List<Long> ids);
+
+
+    /***
      * 修改PmsBrand数据
      * @param pmsBrand
      */
@@ -63,4 +70,22 @@ public interface PmsBrandService {
      * @return
      */
     List<PmsBrand> findAll();
+
+    /**
+     * 根据 categoryID 查询 品牌
+     *
+     * @param categoryId
+     * @param page
+     * @param size
+     * @return
+     */
+    List<PmsBrand> findBrandByCategoryId(Long categoryId, int page, int size);
+
+    /**
+     * 根据 categoryID 查询 品牌 获取总数
+     *
+     * @param categoryId
+     * @return /
+     */
+    int findBrandByCategoryIdCount(Long categoryId);
 }

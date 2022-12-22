@@ -1,4 +1,5 @@
 package com.skywalker.pms.service;
+import com.skywalker.pms.pojo.PmsBrand;
 import com.skywalker.pms.pojo.PmsCategoryBrandRelation;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
@@ -39,6 +40,12 @@ public interface PmsCategoryBrandRelationService {
      */
     void delete(Long id);
 
+    /**
+     * 批量删除
+     * @param ids 多个id
+     */
+    void delete(List<Long> ids);
+
     /***
      * 修改PmsCategoryBrandRelation数据
      * @param pmsCategoryBrandRelation
@@ -63,4 +70,11 @@ public interface PmsCategoryBrandRelationService {
      * @return
      */
     List<PmsCategoryBrandRelation> findAll();
+
+    /**
+     * 根据 分类ID 查询品牌列表
+     * @param catId 分类ID
+     * @return 品牌list
+     */
+    List<PmsBrand> findBrandsByCategoryId(Long catId);
 }

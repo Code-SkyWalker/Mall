@@ -136,4 +136,13 @@ public class PmsCategoryController {
         List<PmsCategory> list = pmsCategoryService.findAll();
         return Result.ok("查询成功", list);
     }
+
+    /**
+     * 查询商品类别, 组成树结构
+     * @return /
+     */
+    @GetMapping("/tree")
+    public Result listWithTree() {
+        return Result.ok("查询成功", pmsCategoryService.listWithTree());
+    }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.skywalker.pms.dao.PmsAttrMapper">
+
+    <resultMap id="AttrResultMap" type="com.skywalker.pms.pojo.PmsAttr">
+        <result column="catelog_id" property="catelogId" />
+        <result column="attr_id" property="attrId" />
+        <result column="attr_name" property="attrName" />
+        <result column="attr_type" property="attrType" />
+        <result column="enable" property="enable" />
+        <result column="icon" property="icon" />
+        <result column="search_type" property="searchType" />
+        <result column="show_desc" property="showDesc" />
+        <result column="value_select" property="valueSelect" />
+        <result column="value_type" property="valueType" />
+    </resultMap>
+
+    <sql id="recursive">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{categoryId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT DISTINCT b.*
+        FROM recursion a, pms_attr b
+        WHERE a.cat_id = b.catelog_id
+    </sql>
+
+    <sql id="ifCondition">
+        <choose>
+            <when test="attrType == 'base'">
+                AND b.attr_type = 0
+            </when>
+            <otherwise>
+                AND b.attr_type != 0
+            </otherwise>
+        </choose>
+    </sql>
+
+    <select id="findAttrByCategoryId" resultType="com.skywalker.pms.pojo.PmsAttr" resultMap="AttrResultMap">
+        <include refid="recursive" />
+        <include refid="ifCondition" />
+        limit #{page}, #{size}
+    </select>
+
+
+    <select id="findAttrByCategoryIdCount" resultType="java.lang.Integer">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{categoryId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT COUNT(DISTINCT b.attr_id)
+        FROM recursion a, pms_attr b
+        WHERE a.cat_id = b.catelog_id
+        <include refid="ifCondition" />
+    </select>
+
+    <select id="findAttrByAttrGroupId" resultType="com.skywalker.pms.pojo.PmsAttr">
+        SELECT *
+        FROM pms_attr
+        WHERE catelog_id = (
+            SELECT catelog_id
+            FROM pms_attr_group
+            WHERE attr_group_id = #{attrGroupId}
+        )
+    </select>
+
+
+</mapper>

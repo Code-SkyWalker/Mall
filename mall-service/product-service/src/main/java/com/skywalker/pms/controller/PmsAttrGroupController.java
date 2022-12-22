@@ -1,5 +1,6 @@
 package com.skywalker.pms.controller;
 import com.skywalker.pms.pojo.PmsAttrGroup;
+import com.skywalker.pms.pojo.PmsBrand;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result ;
@@ -16,8 +17,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/pmsAttrGroup")
-@CrossOrigin
+@RequestMapping("/attrGroup")
 public class PmsAttrGroupController {
 
     @Autowired
@@ -75,6 +75,18 @@ public class PmsAttrGroupController {
     }
 
     /***
+     * 根据ID删除品牌数据
+     * @param ids
+     * @return
+     */
+    @PostMapping(value = "/delete" )
+    public Result delete(@RequestBody List<Long> ids){
+        //调用PmsAttrGroupService实现根据主键删除
+        pmsAttrGroupService.deleteByIds(ids);
+        return Result.ok("删除成功");
+    }
+
+    /***
      * 修改PmsAttrGroup数据
      * @param pmsAttrGroup
      * @param id
@@ -122,5 +134,14 @@ public class PmsAttrGroupController {
         //调用PmsAttrGroupService实现查询所有PmsAttrGroup
         List<PmsAttrGroup> list = pmsAttrGroupService.findAll();
         return Result.ok("查询成功", list) ;
+    }
+
+    @GetMapping("/findAttrGroupByCategoryId/{categoryId}/{page}/{size}")
+    public Result findAttrGroupByCategoryId(@PathVariable(name = "categoryId") Long categoryId,
+                                        @PathVariable(name = "page") int page,
+                                        @PathVariable(name = "size") int size) {
+        List<PmsAttrGroup> brands = pmsAttrGroupService.findAttrGroupByCategoryId(categoryId, page, size);
+        int count = pmsAttrGroupService.findBrandByCategoryIdCount(categoryId);
+        return Result.ok("查询成功").put("data", brands).put("count", count);
     }
 }

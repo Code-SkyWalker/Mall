@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.skywalker.pms.dao.PmsAttrGroupMapper">
+
+    <resultMap id="AttrGroupResultMap" type="com.skywalker.pms.pojo.PmsAttrGroup">
+        <result property="attrGroupId" column="attr_group_id" />
+        <result property="attrGroupName" column="attr_group_name" />
+        <result property="catelogId" column="catelog_id" />
+        <result property="sort" column="sort" />
+        <result property="descript" column="descript" />
+        <result property="icon" column="icon" />
+    </resultMap>
+
+    <sql id="recursive">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{catId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT DISTINCT b.*
+        FROM recursion a, pms_attr_group b
+        WHERE a.cat_id = b.catelog_id
+    </sql>
+
+    <select id="findAttrGroupByCategoryId" resultType="com.skywalker.pms.pojo.PmsAttrGroup" resultMap="AttrGroupResultMap">
+        <include refid="recursive" />
+        LIMIT #{page}, #{size}
+    </select>
+    <select id="findBrandByCategoryIdCount" resultType="java.lang.Integer">
+        WITH RECURSIVE recursion (cat_id, name, parent_cid) AS (
+            SELECT c1.cat_id, c1.name, c1.parent_cid
+            FROM pms_category as c1
+            WHERE c1.cat_id = #{catId}
+            UNION ALL
+            SELECT c2.cat_id, c2.name, c2.parent_cid
+            FROM pms_category c2, recursion c3
+            WHERE c2.parent_cid = c3.cat_id
+        ) SELECT count(DISTINCT b.attr_group_id)
+        FROM recursion a, pms_attr_group b
+        WHERE a.cat_id = b.catelog_id
+    </select>
+
+
+</mapper>

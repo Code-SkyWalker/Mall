@@ -32,6 +32,9 @@ public class PmsAttr implements Serializable{
     @Column(name = "search_type")
 	private Integer searchType;//是否需要检索[0-不需要，1-需要]
 
+    @Column(name = "value_type")
+    private Integer valueType;
+
     @Column(name = "icon")
 	private String icon;//属性图标
 
@@ -49,7 +52,5 @@ public class PmsAttr implements Serializable{
 
     @Column(name = "show_desc")
 	private Integer showDesc;//快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整
-
-
 
 }

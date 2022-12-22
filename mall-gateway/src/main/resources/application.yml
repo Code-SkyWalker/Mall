@@ -5,6 +5,20 @@ spring:
     name: gateway
   cloud:
     gateway:
+      globalcors: # 全局跨域配置
+        add-to-simple-url-handler-mapping: true # 解决Options请求别拦截问题
+          # options请求 就是一种询问服务器是否浏览器可以跨域的请求
+          # 如果每次跨域都有询问服务器是否浏览器可以跨域, 这对性能也是损耗
+          # 可以配置本次跨域检测的有效期maxAge, 在maxAge时间范围内, 统统允许跨域
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            allowCredentials: true
+            maxAge: 360000
+
+
       routes:
         - id: file_route
           uri: lb://file-service

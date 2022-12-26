@@ -1,10 +1,13 @@
 package com.skywalker.pms.controller;
+import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrGroup;
 import com.skywalker.pms.pojo.PmsBrand;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result ;
 
+import com.skywalker.pms.service.PmsAttrService;
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +25,9 @@ public class PmsAttrGroupController {
 
     @Autowired
     private PmsAttrGroupService pmsAttrGroupService;
+
+    @Autowired
+    private PmsAttrService pmsAttrService;
 
     /***
      * PmsAttrGroup分页条件搜索实现
@@ -136,6 +142,13 @@ public class PmsAttrGroupController {
         return Result.ok("查询成功", list) ;
     }
 
+    /**
+     * 分页查询: 根据分类ID查询 attrGroup
+     * @param categoryId 分类ID
+     * @param page 分页
+     * @param size 分页大小
+     * @return /
+     */
     @GetMapping("/findAttrGroupByCategoryId/{categoryId}/{page}/{size}")
     public Result findAttrGroupByCategoryId(@PathVariable(name = "categoryId") Long categoryId,
                                         @PathVariable(name = "page") int page,
@@ -143,5 +156,17 @@ public class PmsAttrGroupController {
         List<PmsAttrGroup> brands = pmsAttrGroupService.findAttrGroupByCategoryId(categoryId, page, size);
         int count = pmsAttrGroupService.findBrandByCategoryIdCount(categoryId);
         return Result.ok("查询成功").put("data", brands).put("count", count);
+    }
+
+
+    /**
+     * 根据 分类ID 查询该 分类下所有属性
+     * @param categoryId 分类ID
+     * @return Result
+     */
+    @GetMapping("/{categoryId}/withattr")
+    public Result findAttrGroupsWithAttrsByCategoryId(@PathVariable(name = "categoryId") Long categoryId) {
+        List<AttrGroupsAndAttrs> attrsGroupsWithAttrs = pmsAttrGroupService.findAttrGroupsWithAttrsByCategoryId(categoryId);
+        return Result.ok(attrsGroupsWithAttrs);
     }
 }

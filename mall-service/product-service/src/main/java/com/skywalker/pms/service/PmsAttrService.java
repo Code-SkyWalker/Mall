@@ -1,6 +1,7 @@
 package com.skywalker.pms.service;
 import com.skywalker.pms.pojo.PmsAttr;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 
 import java.util.List;
 /**
@@ -110,4 +111,11 @@ public interface PmsAttrService {
      * @return
      */
     List<PmsAttr> findAttrByCategoryIdAndAttrIds(Long catelogId, List<Long> attrIds, String attrName, int page, int size);
+
+    /**
+     * 根据 关联的分组 查询该分组下所有 属性
+     * @param attrGroupId 分组ID
+     * @return /
+     */
+    List<PmsAttr> findAttrByRelatedAttrGroup(Long attrGroupId);
 }

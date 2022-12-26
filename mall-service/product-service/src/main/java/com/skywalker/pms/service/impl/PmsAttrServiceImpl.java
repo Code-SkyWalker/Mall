@@ -10,6 +10,7 @@ import com.skywalker.pms.service.PmsAttrGroupService;
 import com.skywalker.pms.service.PmsAttrService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -290,5 +291,16 @@ public class PmsAttrServiceImpl implements PmsAttrService {
                 .stream().filter(ele -> ele.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode())
                 .collect(Collectors.toList());
         return new PageInfo<>(attrs);
+    }
+
+    /**
+     * 根据 关联的分组 查询该分组下所有 属性
+     *
+     * @param attrGroupId 分组ID
+     * @return /
+     */
+    @Override
+    public List<PmsAttr> findAttrByRelatedAttrGroup(Long attrGroupId) {
+        return pmsAttrMapper.findAttrByRelatedAttrGroup(attrGroupId);
     }
 }

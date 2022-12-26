@@ -32,10 +32,10 @@
     <sql id="ifCondition">
         <choose>
             <when test="attrType == 'base'">
-                AND b.attr_type = 0
+                AND b.attr_type = 1
             </when>
             <otherwise>
-                AND b.attr_type != 0
+                AND b.attr_type != 1
             </otherwise>
         </choose>
     </sql>
@@ -70,6 +70,14 @@
             FROM pms_attr_group
             WHERE attr_group_id = #{attrGroupId}
         )
+    </select>
+
+<!--  根据分组ID查询该分组下所有属性  -->
+    <select id="findAttrByRelatedAttrGroup" resultMap="AttrResultMap">
+        SELECT a.*
+        FROM pms_attr a
+        left JOIN pms_attr_attrgroup_relation b ON a.attr_id = b.attr_id
+        WHERE b.attr_group_id = #{attrGroupId} AND a.attr_type = 1
     </select>
 
 

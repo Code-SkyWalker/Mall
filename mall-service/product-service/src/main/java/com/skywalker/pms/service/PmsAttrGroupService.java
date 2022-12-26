@@ -1,6 +1,9 @@
 package com.skywalker.pms.service;
+import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrGroup;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
+
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -93,4 +96,11 @@ public interface PmsAttrGroupService {
      * @return count
      */
     int findBrandByCategoryIdCount(Long catId);
+
+    /**
+     * 根据 分类ID 查询属性分组及其分组下所有属性
+     * @param categoryId /
+     * @return /
+     */
+    List<AttrGroupsAndAttrs> findAttrGroupsWithAttrsByCategoryId(Long categoryId);
 }

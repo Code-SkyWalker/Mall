@@ -1,9 +1,13 @@
 package com.skywalker.pms.service.impl;
 import com.skywalker.pms.dao.PmsAttrGroupMapper;
+import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrGroup;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.service.PmsAttrService;
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -12,6 +16,7 @@ import tk.mybatis.mapper.entity.Example;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @Author Code SkyWalker
@@ -23,6 +28,9 @@ public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
 
     @Resource
     private PmsAttrGroupMapper pmsAttrGroupMapper;
+
+    @Autowired
+    private PmsAttrService pmsAttrService;
 
 
     /**
@@ -203,5 +211,38 @@ public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
     @Override
     public int findBrandByCategoryIdCount(Long catId) {
         return pmsAttrGroupMapper.findBrandByCategoryIdCount(catId);
+    }
+
+    /**
+     * 根据 分类ID查询 该分类下所有 分类
+     * @param categoryId
+     * @return
+     */
+    public List<PmsAttrGroup> findAttrGroupsByCategory(Long categoryId) {
+        Example example = new Example(PmsAttrGroup.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("catelogId", categoryId);
+        return pmsAttrGroupMapper.selectByExample(example);
+    }
+
+    /**
+     * 根据 分类ID 查询属性分组及其分组下所有属性
+     *
+     * @param categoryId /
+     * @return /
+     */
+    @Override
+    public List<AttrGroupsAndAttrs> findAttrGroupsWithAttrsByCategoryId(Long categoryId) {
+        // 查询所有属性分组
+        List<PmsAttrGroup> attrGroupsByCategory = this.findAttrGroupsByCategory(categoryId);
+        // 查询所有属性
+        return attrGroupsByCategory.stream().map(group -> {
+            AttrGroupsAndAttrs attrGroupsAndAttrs = new AttrGroupsAndAttrs();
+            BeanUtils.copyProperties(group, attrGroupsAndAttrs);
+
+            // 查询该分组下 所有属性
+            attrGroupsAndAttrs.setAttrs(pmsAttrService.findAttrByRelatedAttrGroup(group.getAttrGroupId()));
+            return attrGroupsAndAttrs;
+        }).collect(Collectors.toList());
     }
 }

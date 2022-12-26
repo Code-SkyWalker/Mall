@@ -5,6 +5,7 @@ import com.skywalker.pms.service.PmsAttrService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result;
 
+import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -170,4 +171,5 @@ public class PmsAttrController {
         PageInfo<PmsAttr> notRelationAttr = pmsAttrService.getNotRelationAttr(attrGroupId, attrName, page, size);
         return Result.ok(notRelationAttr);
     }
+
 }

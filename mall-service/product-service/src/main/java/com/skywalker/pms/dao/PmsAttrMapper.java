@@ -20,4 +20,6 @@ public interface PmsAttrMapper extends Mapper<PmsAttr> {
     int findAttrByCategoryIdCount(@Param("attrType") String attrType, @Param("categoryId") Long categoryId);
 
     List<PmsAttr> findAttrByAttrGroupId(@Param("attrGroupId") Long attrGroupId);
+
+    List<PmsAttr> findAttrByRelatedAttrGroup(@Param("attrGroupId") Long attrGroupId);
 }

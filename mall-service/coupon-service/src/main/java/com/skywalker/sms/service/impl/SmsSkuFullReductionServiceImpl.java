@@ -1,11 +1,18 @@
 package com.skywalker.sms.service.impl;
 import com.skywalker.sms.dao.SmsSkuFullReductionMapper;
+import com.skywalker.sms.pojo.SmsMemberPrice;
 import com.skywalker.sms.pojo.SmsSkuFullReduction;
+import com.skywalker.sms.pojo.SmsSkuLadder;
+import com.skywalker.sms.service.SmsMemberPriceService;
 import com.skywalker.sms.service.SmsSkuFullReductionService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.sms.service.SmsSkuLadderService;
+import com.skywalker.to.SkuCouponTo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 import java.util.List;
@@ -19,6 +26,12 @@ public class SmsSkuFullReductionServiceImpl implements SmsSkuFullReductionServic
 
     @Autowired
     private SmsSkuFullReductionMapper smsSkuFullReductionMapper;
+
+    @Autowired
+    private SmsSkuLadderService smsSkuLadderService;
+
+    @Autowired
+    private SmsMemberPriceService smsMemberPriceService;
 
 
     /**
@@ -143,5 +156,35 @@ public class SmsSkuFullReductionServiceImpl implements SmsSkuFullReductionServic
     @Override
     public List<SmsSkuFullReduction> findAll() {
         return smsSkuFullReductionMapper.selectAll();
+    }
+
+    /**
+     * 添加商品时, sku对应的优惠满减信息
+     *
+     * @param skuCouponTo
+     */
+    @Transactional
+    @Override
+    public void addSkuCouponInfo(SkuCouponTo skuCouponTo) {
+        SmsSkuFullReduction smsSkuFullReduction = new SmsSkuFullReduction();
+        BeanUtils.copyProperties(skuCouponTo, smsSkuFullReduction);
+        this.add(smsSkuFullReduction);
+
+        SmsSkuLadder smsSkuLadder = new SmsSkuLadder();
+        BeanUtils.copyProperties(skuCouponTo, smsSkuLadder);
+        smsSkuLadder.setAddOther(skuCouponTo.getCountStatus());
+//        smsSkuLadder.setPrice();
+        smsSkuLadderService.add(smsSkuLadder);
+
+        skuCouponTo.getMemberPrice().forEach(item -> {
+            SmsMemberPrice smsMemberPrice = new SmsMemberPrice();
+            smsMemberPrice.setSkuId(skuCouponTo.getSkuId());
+            smsMemberPrice.setMemberPrice(item.getPrice());
+            smsMemberPrice.setMemberLevelId(item.getId());
+            smsMemberPrice.setMemberLevelName(item.getLevel());
+            smsMemberPrice.setAddOther(1);
+            smsMemberPriceService.add(smsMemberPrice);
+        });
+
     }
 }

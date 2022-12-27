@@ -43,7 +43,7 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
             - StripPrefix=1
 
-        - id: conpon_route
+        - id: coupon_route
           uri: lb://conpon-service
           predicates:
             - Path=/api/conpon/**

@@ -2,6 +2,7 @@ package com.skywalker.sms.feign;
 
 import com.skywalker.entity.Result;
 import com.skywalker.sms.pojo.SmsSkuFullReduction;
+import com.skywalker.to.SkuCouponTo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * @Classname SmsSkuFullReductionFeign
  * @Description TODO
  */
-@FeignClient(name="sms", contextId = "smsSkuFullReduction", path = "/smsSkuFullReduction")
+@FeignClient(name="coupon-service", contextId = "smsSkuFullReduction", path = "/skuFullReduction")
 public interface SmsSkuFullReductionFeign {
 
     /***
@@ -79,4 +80,7 @@ public interface SmsSkuFullReductionFeign {
      */
     @GetMapping
     Result findAll();
+
+    @PostMapping("/skuCouponInfo/add")
+    Result addSkuCouponInfo(@RequestBody SkuCouponTo skuCouponTo);
 }

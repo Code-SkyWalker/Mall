@@ -1,9 +1,16 @@
 package com.skywalker.sms.controller;
+import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.skywalker.sms.pojo.SmsMemberPrice;
 import com.skywalker.sms.pojo.SmsSkuFullReduction;
+import com.skywalker.sms.pojo.SmsSkuLadder;
+import com.skywalker.sms.service.SmsMemberPriceService;
 import com.skywalker.sms.service.SmsSkuFullReductionService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result ;
 
+import com.skywalker.sms.service.SmsSkuLadderService;
+import com.skywalker.to.SkuCouponTo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -122,5 +129,16 @@ public class SmsSkuFullReductionController {
         //调用SmsSkuFullReductionService实现查询所有SmsSkuFullReduction
         List<SmsSkuFullReduction> list = smsSkuFullReductionService.findAll();
         return Result.ok("查询成功", list) ;
+    }
+
+    /**
+     * 添加商品时, sku对应的优惠满减信息
+     * @param skuCouponTo feign 传输对象
+     * @return
+     */
+    @PostMapping("/skuCouponInfo/add")
+    public Result addSkuCouponInfo(@RequestBody SkuCouponTo skuCouponTo) {
+        this.smsSkuFullReductionService.addSkuCouponInfo(skuCouponTo);
+        return Result.ok();
     }
 }

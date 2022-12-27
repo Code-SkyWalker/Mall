@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 /**
@@ -36,10 +37,10 @@ public class SmsMemberPrice implements Serializable{
 	private String memberLevelName;//会员等级名
 
     @Column(name = "member_price")
-	private String memberPrice;//会员对应价格
+	private BigDecimal memberPrice;//会员对应价格
 
     @Column(name = "add_other")
-	private String addOther;//可否叠加其他优惠[0-不可叠加优惠，1-可叠加]
+	private Integer addOther;//可否叠加其他优惠[0-不可叠加优惠，1-可叠加]
 
 
 

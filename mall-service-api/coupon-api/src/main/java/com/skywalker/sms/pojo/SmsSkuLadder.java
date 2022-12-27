@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 /**
@@ -33,13 +34,13 @@ public class SmsSkuLadder implements Serializable{
 	private Integer fullCount;//满几件
 
     @Column(name = "discount")
-	private String discount;//打几折
+	private BigDecimal discount;//打几折
 
     @Column(name = "price")
-	private String price;//折后价
+	private BigDecimal price;//折后价
 
     @Column(name = "add_other")
-	private String addOther;//是否叠加其他优惠[0-不可叠加，1-可叠加]
+	private Integer addOther;//是否叠加其他优惠[0-不可叠加，1-可叠加]
 
 
 

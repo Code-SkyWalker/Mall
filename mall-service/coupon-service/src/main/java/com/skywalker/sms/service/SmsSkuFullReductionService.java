@@ -1,6 +1,8 @@
 package com.skywalker.sms.service;
 import com.skywalker.sms.pojo.SmsSkuFullReduction;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.to.SkuCouponTo;
+
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -63,4 +65,10 @@ public interface SmsSkuFullReductionService {
      * @return
      */
     List<SmsSkuFullReduction> findAll();
+
+    /**
+     * 添加商品时, sku对应的优惠满减信息
+     * @param skuCouponTo
+     */
+    void addSkuCouponInfo(SkuCouponTo skuCouponTo);
 }

@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsMemberStatisticsInfo")
-@CrossOrigin
 public class UmsMemberStatisticsInfoController {
 
     @Autowired

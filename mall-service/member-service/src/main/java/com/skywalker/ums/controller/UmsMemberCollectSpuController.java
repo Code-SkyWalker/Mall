@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsMemberCollectSpu")
-@CrossOrigin
 public class UmsMemberCollectSpuController {
 
     @Autowired

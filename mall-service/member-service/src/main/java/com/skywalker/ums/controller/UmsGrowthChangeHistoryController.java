@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsGrowthChangeHistory")
-@CrossOrigin
 public class UmsGrowthChangeHistoryController {
 
     @Autowired

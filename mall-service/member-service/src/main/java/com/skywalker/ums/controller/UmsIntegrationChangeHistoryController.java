@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsIntegrationChangeHistory")
-@CrossOrigin
 public class UmsIntegrationChangeHistoryController {
 
     @Autowired

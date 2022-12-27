@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsMemberCollectSubject")
-@CrossOrigin
 public class UmsMemberCollectSubjectController {
 
     @Autowired

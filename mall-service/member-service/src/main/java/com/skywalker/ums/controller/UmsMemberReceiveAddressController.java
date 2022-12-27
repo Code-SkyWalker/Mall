@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsMemberReceiveAddress")
-@CrossOrigin
 public class UmsMemberReceiveAddressController {
 
     @Autowired

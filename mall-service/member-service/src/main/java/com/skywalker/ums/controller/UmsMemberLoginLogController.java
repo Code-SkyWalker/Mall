@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/umsMemberLoginLog")
-@CrossOrigin
 public class UmsMemberLoginLogController {
 
     @Autowired

@@ -35,12 +35,29 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
             - StripPrefix=1
 
+        - id: member_route
+          uri: lb://member-service
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            - StripPrefix=1
+
+        - id: conpon_route
+          uri: lb://conpon-service
+          predicates:
+            - Path=/api/conpon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            - StripPrefix=1
+
         - id: admin_route
           uri: lb://admin-service
           predicates:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848

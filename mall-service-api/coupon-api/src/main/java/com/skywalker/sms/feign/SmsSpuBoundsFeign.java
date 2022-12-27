@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * @Classname SmsSpuBoundsFeign
  * @Description TODO
  */
-@FeignClient(name="sms", contextId = "smsSpuBounds", path = "/smsSpuBounds")
+@FeignClient(name="conpon-service", contextId = "smsSpuBounds", path = "/spuBounds")
 public interface SmsSpuBoundsFeign {
 
     /***

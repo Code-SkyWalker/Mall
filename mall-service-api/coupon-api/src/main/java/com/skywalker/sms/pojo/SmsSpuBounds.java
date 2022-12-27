@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 /**
@@ -30,10 +31,10 @@ public class SmsSpuBounds implements Serializable{
 	private Long spuId;//
 
     @Column(name = "grow_bounds")
-	private String growBounds;//成长积分
+	private BigDecimal growBounds;//成长积分
 
     @Column(name = "buy_bounds")
-	private String buyBounds;//购物积分
+	private BigDecimal buyBounds;//购物积分
 
     @Column(name = "work")
 	private String work;//优惠生效情况[1111（四个状态位，从右到左）;0 - 无优惠，成长积分是否赠送;1 - 无优惠，购物积分是否赠送;2 - 有优惠，成长积分是否赠送;3 - 有优惠，购物积分是否赠送【状态位0：不赠送，1：赠送】]

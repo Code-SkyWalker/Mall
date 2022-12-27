@@ -1,20 +1,13 @@
-package com.skywalker.pms.vo;
-import com.skywalker.to.MemberPrice;
+package com.skywalker.to;
+
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-public class Skus {
-
-    private List<AttrVo> attr;
-    private String skuName;
-    private BigDecimal price;
-    private String skuTitle;
-    private String skuSubtitle;
-    private List<ImagesVo> images;
-    private List<String> descar;
+public class SkuCouponTo {
+    private Long skuId;
     private int fullCount;
     private BigDecimal discount; // 折扣
     private int countStatus;

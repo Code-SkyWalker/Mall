@@ -5,8 +5,10 @@ import com.skywalker.pms.service.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.pms.vo.*;
+import com.skywalker.sms.feign.SmsSkuFullReductionFeign;
 import com.skywalker.sms.feign.SmsSpuBoundsFeign;
 import com.skywalker.sms.pojo.SmsSpuBounds;
+import com.skywalker.to.SkuCouponTo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +52,9 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
     @Autowired
     private SmsSpuBoundsFeign smsSpuBoundsFeign;
+
+    @Autowired
+    private SmsSkuFullReductionFeign smsSkuFullReductionFeign;
 
     /**
      * PmsSpuInfo条件+分页查询
@@ -286,8 +291,14 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
                 pmsSkuSaleAttrValueService.add(pmsSkuSaleAttrValue);
             });
+
+            // 6.4 sku的优惠满减等信息 sms_sku_ladder / sms_sku_full_reduction / sms_member_price
+            SkuCouponTo skuCouponTo = new SkuCouponTo();
+            BeanUtils.copyProperties(sku, skuCouponTo); // 构建skuCoupon传输对象
+            skuCouponTo.setSkuId(pmsSkuInfo.getSkuId());
+
+            this.smsSkuFullReductionFeign.addSkuCouponInfo(skuCouponTo);
         });
 
-        // 6.4 sku的优惠满减等信息 sms_sku_ladder / sms_sku_full_reduction / sms_member_price
     }
 }

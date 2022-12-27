@@ -1,4 +1,4 @@
-package com.skywalker.pms.vo;
+package com.skywalker.to;
 
 import lombok.Data;
 

@@ -1,9 +1,11 @@
 package com.skywalker.pms.controller;
+
 import com.skywalker.pms.pojo.PmsSpuInfo;
 import com.skywalker.pms.service.PmsSpuInfoService;
 import com.github.pagehelper.PageInfo;
-import com.skywalker.entity.Result ;
+import com.skywalker.entity.Result;
 
+import com.skywalker.pms.vo.SpuSaveVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +32,8 @@ public class PmsSpuInfoController {
      * @param size
      * @return
      */
-    @PostMapping(value = "/search/{page}/{size}" )
-    public Result findPage(@RequestBody(required = false)  PmsSpuInfo pmsSpuInfo, @PathVariable  int page, @PathVariable  int size){
+    @PostMapping(value = "/search/{page}/{size}")
+    public Result findPage(@RequestBody(required = false) PmsSpuInfo pmsSpuInfo, @PathVariable int page, @PathVariable int size) {
         //调用PmsSpuInfoService实现分页条件查询PmsSpuInfo
         PageInfo<PmsSpuInfo> pageInfo = pmsSpuInfoService.findPage(pmsSpuInfo, page, size);
         return Result.ok("查询成功", pageInfo);
@@ -43,8 +45,8 @@ public class PmsSpuInfoController {
      * @param size:每页显示多少条
      * @return
      */
-    @GetMapping(value = "/search/{page}/{size}" )
-    public Result findPage(@PathVariable  int page, @PathVariable  int size){
+    @GetMapping(value = "/search/{page}/{size}")
+    public Result findPage(@PathVariable int page, @PathVariable int size) {
         //调用PmsSpuInfoService实现分页查询PmsSpuInfo
         PageInfo<PmsSpuInfo> pageInfo = pmsSpuInfoService.findPage(page, size);
         return Result.ok("查询成功", pageInfo);
@@ -55,8 +57,8 @@ public class PmsSpuInfoController {
      * @param pmsSpuInfo
      * @return
      */
-    @PostMapping(value = "/search" )
-    public Result findList(@RequestBody(required = false)  PmsSpuInfo pmsSpuInfo){
+    @PostMapping(value = "/search")
+    public Result findList(@RequestBody(required = false) PmsSpuInfo pmsSpuInfo) {
         //调用PmsSpuInfoService实现条件查询PmsSpuInfo
         List<PmsSpuInfo> list = pmsSpuInfoService.findList(pmsSpuInfo);
         return Result.ok("查询成功", list);
@@ -67,8 +69,8 @@ public class PmsSpuInfoController {
      * @param id
      * @return
      */
-    @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Long id){
+    @DeleteMapping(value = "/{id}")
+    public Result delete(@PathVariable Long id) {
         //调用PmsSpuInfoService实现根据主键删除
         pmsSpuInfoService.delete(id);
         return Result.ok("删除成功");
@@ -80,8 +82,8 @@ public class PmsSpuInfoController {
      * @param id
      * @return
      */
-    @PutMapping(value="/{id}")
-    public Result update(@RequestBody  PmsSpuInfo pmsSpuInfo,@PathVariable Long id){
+    @PutMapping(value = "/{id}")
+    public Result update(@RequestBody PmsSpuInfo pmsSpuInfo, @PathVariable Long id) {
         //设置主键值
         pmsSpuInfo.setId(id);
         //调用PmsSpuInfoService实现修改PmsSpuInfo
@@ -91,13 +93,13 @@ public class PmsSpuInfoController {
 
     /***
      * 新增PmsSpuInfo数据
-     * @param pmsSpuInfo
+     * @param vo
      * @return
      */
-    @PostMapping
-    public Result add(@RequestBody   PmsSpuInfo pmsSpuInfo){
+    @PostMapping("/save")
+    public Result add(@RequestBody SpuSaveVo vo) {
         //调用PmsSpuInfoService实现添加PmsSpuInfo
-        pmsSpuInfoService.add(pmsSpuInfo);
+        pmsSpuInfoService.saveSpuInfo(vo);
         return Result.ok("添加成功");
     }
 
@@ -107,7 +109,7 @@ public class PmsSpuInfoController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result findById(@PathVariable Long id){
+    public Result findById(@PathVariable Long id) {
         //调用PmsSpuInfoService实现根据主键查询PmsSpuInfo
         PmsSpuInfo pmsSpuInfo = pmsSpuInfoService.findById(id);
         return Result.ok("查询成功", pmsSpuInfo);
@@ -118,9 +120,9 @@ public class PmsSpuInfoController {
      * @return
      */
     @GetMapping
-    public Result findAll(){
+    public Result findAll() {
         //调用PmsSpuInfoService实现查询所有PmsSpuInfo
         List<PmsSpuInfo> list = pmsSpuInfoService.findAll();
-        return Result.ok("查询成功", list) ;
+        return Result.ok("查询成功", list);
     }
 }

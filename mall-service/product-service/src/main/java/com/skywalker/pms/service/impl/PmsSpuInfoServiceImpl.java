@@ -1,13 +1,20 @@
 package com.skywalker.pms.service.impl;
 import com.skywalker.pms.dao.PmsSpuInfoMapper;
-import com.skywalker.pms.pojo.PmsSpuInfo;
-import com.skywalker.pms.service.PmsSpuInfoService;
+import com.skywalker.pms.pojo.*;
+import com.skywalker.pms.service.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.vo.*;
+import com.skywalker.sms.feign.SmsSpuBoundsFeign;
+import com.skywalker.sms.pojo.SmsSpuBounds;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -17,9 +24,32 @@ import java.util.List;
 @Service
 public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
-    @Autowired
+    @Resource
     private PmsSpuInfoMapper pmsSpuInfoMapper;
 
+    @Resource
+    private PmsSpuInfoDescService pmsSpuInfoDescService;
+
+    @Resource
+    private PmsSpuImagesService pmsSpuImagesService;
+
+    @Resource
+    private PmsAttrService pmsAttrService;
+
+    @Resource
+    private PmsProductAttrValueService pmsProductAttrValueService;
+
+    @Resource
+    private PmsSkuImagesService pmsSkuImagesService;
+
+    @Resource
+    private PmsSkuInfoService pmsSkuInfoService;
+
+    @Resource
+    private PmsSkuSaleAttrValueService pmsSkuSaleAttrValueService;
+
+    @Autowired
+    private SmsSpuBoundsFeign smsSpuBoundsFeign;
 
     /**
      * PmsSpuInfo条件+分页查询
@@ -35,7 +65,7 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
         //搜索条件构建
         Example example = createExample(pmsSpuInfo);
         //执行搜索
-        return new PageInfo<PmsSpuInfo>(pmsSpuInfoMapper.selectByExample(example));
+        return new PageInfo<>(pmsSpuInfoMapper.selectByExample(example));
     }
 
     /**
@@ -159,5 +189,105 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
     @Override
     public List<PmsSpuInfo> findAll() {
         return pmsSpuInfoMapper.selectAll();
+    }
+
+    /**
+     * 保存商品信息
+     *
+     * @param vo 商品vo类
+     */
+    @Override
+    @Transactional
+    public void saveSpuInfo(SpuSaveVo vo) {
+        // 1. 保存spu基本信息: pms_spu_info
+        PmsSpuInfo pmsSpuInfo = new PmsSpuInfo();
+        BeanUtils.copyProperties(vo, pmsSpuInfo);
+        this.add(pmsSpuInfo);
+
+        // 2. 保存Spu的描述图片: pms_spu_info_desc
+        List<String> decript = vo.getDecript();
+        PmsSpuInfoDesc pmsSpuInfoDesc = new PmsSpuInfoDesc();
+        pmsSpuInfoDesc.setSpuId(pmsSpuInfo.getId());
+        pmsSpuInfoDesc.setDecript(String.join(",", decript));
+        this.pmsSpuInfoDescService.add(pmsSpuInfoDesc);
+
+        // 3. 保存spu的图片集: pms_spu_images
+        List<String> images = vo.getImages();
+        images.forEach(img -> {
+            PmsSpuImages pmsSpuImages = new PmsSpuImages();
+            pmsSpuImages.setSpuId(pmsSpuInfo.getId());
+            pmsSpuImages.setImgUrl(img);
+
+            this.pmsSpuImagesService.add(pmsSpuImages);
+        });
+
+        // 4. 保存spu的规格参数: pms_product_attr_value
+        List<BaseAttrsVo> baseAttrs = vo.getBaseAttrs();
+        baseAttrs.forEach(attr -> {
+            PmsProductAttrValue pmsProductAttrValue = new PmsProductAttrValue();
+            pmsProductAttrValue.setSpuId(pmsSpuInfo.getId());
+            pmsProductAttrValue.setAttrId(attr.getAttrId());
+            pmsProductAttrValue.setAttrName(this.pmsAttrService.findById(attr.getAttrId()).getAttrName());
+            pmsProductAttrValue.setAttrValue(attr.getAttrValues());
+            pmsProductAttrValue.setQuickShow(attr.getShowDesc());
+
+            this.pmsProductAttrValueService.add(pmsProductAttrValue);
+        });
+
+
+        // 5. 保存spu的积分信息: sms_spu_bounds
+        SmsSpuBounds smsSpuBounds = new SmsSpuBounds();
+        BeanUtils.copyProperties(vo.getBounds(), smsSpuBounds);
+        smsSpuBounds.setSpuId(pmsSpuInfo.getId());
+        this.smsSpuBoundsFeign.add(smsSpuBounds);
+
+        // 6. 保存当前 spu 对应的所有 sku 信息
+        List<Skus> skus = vo.getSkus();
+        skus.forEach(sku -> {
+            PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
+
+            // 寻找默认的代表图片
+            String defaultImage = null;
+            for (ImagesVo image : sku.getImages()) {
+                if (image.getDefaultImg() == 1) {
+                    defaultImage = image.getImgUrl();
+                    break;
+                }
+            }
+
+            // 6.1 sku的基本信息: pms_sku_info
+            BeanUtils.copyProperties(sku, pmsSkuInfo);
+            pmsSkuInfo.setSpuId(pmsSpuInfo.getId());
+            pmsSkuInfo.setPrice(sku.getPrice());
+            pmsSkuInfo.setBrandId(vo.getBrandId());
+            pmsSkuInfo.setCatalogId(vo.getCatalogId());
+            pmsSkuInfo.setSkuDefaultImg(defaultImage);
+            pmsSkuInfo.setSaleCount(0L);
+            this.pmsSkuInfoService.add(pmsSkuInfo);
+
+            // 6.2 sku的图片信息: pms_sku_images
+            sku.getImages().forEach(img -> {
+                PmsSkuImages pmsSkuImages = new PmsSkuImages();
+                pmsSkuImages.setSkuId(pmsSkuInfo.getSkuId());
+                pmsSkuImages.setImgUrl(img.getImgUrl());
+                pmsSkuImages.setDefaultImg(img.getDefaultImg());
+
+                pmsSkuImagesService.add(pmsSkuImages);
+            });
+
+            // 6.3 sku的销售属性信息: pms_sku_sale_attr_value
+            List<AttrVo> attrs = sku.getAttr();
+            attrs.forEach(attrVo -> {
+                PmsSkuSaleAttrValue pmsSkuSaleAttrValue = new PmsSkuSaleAttrValue();
+                pmsSkuSaleAttrValue.setSkuId(pmsSkuInfo.getSkuId());
+                pmsSkuSaleAttrValue.setAttrName(attrVo.getAttrName());
+                pmsSkuSaleAttrValue.setAttrValue(attrVo.getAttrValue());
+                pmsSkuSaleAttrValue.setAttrId(attrVo.getAttrId());
+
+                pmsSkuSaleAttrValueService.add(pmsSkuSaleAttrValue);
+            });
+        });
+
+        // 6.4 sku的优惠满减等信息 sms_sku_ladder / sms_sku_full_reduction / sms_member_price
     }
 }

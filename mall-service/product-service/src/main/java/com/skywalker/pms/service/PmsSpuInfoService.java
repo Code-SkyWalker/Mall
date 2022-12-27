@@ -1,6 +1,8 @@
 package com.skywalker.pms.service;
 import com.skywalker.pms.pojo.PmsSpuInfo;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.vo.SpuSaveVo;
+
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -63,4 +65,10 @@ public interface PmsSpuInfoService {
      * @return
      */
     List<PmsSpuInfo> findAll();
+
+    /**
+     * 保存商品信息
+     * @param vo 商品vo类
+     */
+    void saveSpuInfo(SpuSaveVo vo);
 }

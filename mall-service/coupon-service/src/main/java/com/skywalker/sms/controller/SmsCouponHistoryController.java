@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsCouponHistory")
+@RequestMapping("/couponHistory")
 @CrossOrigin
 public class SmsCouponHistoryController {
 

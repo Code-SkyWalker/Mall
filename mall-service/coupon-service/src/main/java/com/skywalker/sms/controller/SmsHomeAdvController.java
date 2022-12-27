@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsHomeAdv")
+@RequestMapping("/homeAdv")
 @CrossOrigin
 public class SmsHomeAdvController {
 

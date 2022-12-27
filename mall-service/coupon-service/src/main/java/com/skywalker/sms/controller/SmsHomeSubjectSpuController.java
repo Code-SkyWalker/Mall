@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsHomeSubjectSpu")
+@RequestMapping("/homeSubjectSpu")
 @CrossOrigin
 public class SmsHomeSubjectSpuController {
 

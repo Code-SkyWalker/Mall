@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSpuBounds")
+@RequestMapping("/spuBounds")
 @CrossOrigin
 public class SmsSpuBoundsController {
 

@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsMemberPrice")
+@RequestMapping("/memberPrice")
 @CrossOrigin
 public class SmsMemberPriceController {
 

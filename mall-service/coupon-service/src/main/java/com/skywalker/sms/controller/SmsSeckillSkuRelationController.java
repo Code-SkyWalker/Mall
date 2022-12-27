@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSeckillSkuRelation")
+@RequestMapping("/seckillSkuRelation")
 @CrossOrigin
 public class SmsSeckillSkuRelationController {
 

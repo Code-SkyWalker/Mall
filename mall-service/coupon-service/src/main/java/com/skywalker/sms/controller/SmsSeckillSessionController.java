@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSeckillSession")
+@RequestMapping("/seckillSession")
 @CrossOrigin
 public class SmsSeckillSessionController {
 

@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSeckillPromotion")
+@RequestMapping("/seckillPromotion")
 @CrossOrigin
 public class SmsSeckillPromotionController {
 

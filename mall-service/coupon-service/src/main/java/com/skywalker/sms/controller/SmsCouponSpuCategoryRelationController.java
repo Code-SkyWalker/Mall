@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsCouponSpuCategoryRelation")
+@RequestMapping("/couponSpuCategoryRelation")
 @CrossOrigin
 public class SmsCouponSpuCategoryRelationController {
 

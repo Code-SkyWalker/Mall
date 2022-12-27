@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSkuFullReduction")
+@RequestMapping("/skuFullReduction")
 @CrossOrigin
 public class SmsSkuFullReductionController {
 

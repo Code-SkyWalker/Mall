@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/smsSkuLadder")
+@RequestMapping("/skuLadder")
 @CrossOrigin
 public class SmsSkuLadderController {
 

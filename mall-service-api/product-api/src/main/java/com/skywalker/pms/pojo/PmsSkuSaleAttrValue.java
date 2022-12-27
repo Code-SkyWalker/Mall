@@ -41,6 +41,4 @@ public class PmsSkuSaleAttrValue implements Serializable{
     @Column(name = "attr_sort")
 	private Integer attrSort;//顺序
 
-
-
 }

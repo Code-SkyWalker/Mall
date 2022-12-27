@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 /**
@@ -51,7 +52,7 @@ public class PmsSkuInfo implements Serializable{
 	private String skuSubtitle;//副标题
 
     @Column(name = "price")
-	private String price;//价格
+	private BigDecimal price;//价格
 
     @Column(name = "sale_count")
 	private Long saleCount;//销量

@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 /**
@@ -40,16 +42,16 @@ public class PmsSpuInfo implements Serializable{
 	private Long brandId;//品牌id
 
     @Column(name = "weight")
-	private String weight;//
+	private BigDecimal weight;//
 
     @Column(name = "publish_status")
 	private Integer publishStatus;//上架状态[0 - 下架，1 - 上架]
 
     @Column(name = "create_time")
-	private LocalDate createTime;//
+	private LocalDateTime createTime = LocalDateTime.now();//
 
     @Column(name = "update_time")
-	private LocalDate updateTime;//
+	private LocalDateTime updateTime = LocalDateTime.now();//
 
 
 

@@ -4,9 +4,11 @@ import com.skywalker.pms.service.PmsSkuInfoService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result ;
 
+import com.skywalker.pms.vo.PmsSkuInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -16,8 +18,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/pmsSkuInfo")
-@CrossOrigin
+@RequestMapping("/skuInfo")
 public class PmsSkuInfoController {
 
     @Autowired
@@ -25,15 +26,15 @@ public class PmsSkuInfoController {
 
     /***
      * PmsSkuInfo分页条件搜索实现
-     * @param pmsSkuInfo
+     * @param pmsSkuInfoVo
      * @param page
      * @param size
      * @return
      */
     @PostMapping(value = "/search/{page}/{size}" )
-    public Result findPage(@RequestBody(required = false)  PmsSkuInfo pmsSkuInfo, @PathVariable  int page, @PathVariable  int size){
+    public Result findPage(@RequestBody(required = false) PmsSkuInfoVo pmsSkuInfoVo, @PathVariable  int page, @PathVariable  int size){
         //调用PmsSkuInfoService实现分页条件查询PmsSkuInfo
-        PageInfo<PmsSkuInfo> pageInfo = pmsSkuInfoService.findPage(pmsSkuInfo, page, size);
+        PageInfo<PmsSkuInfo> pageInfo = pmsSkuInfoService.findPage(pmsSkuInfoVo, page, size);
         return Result.ok("查询成功", pageInfo);
     }
 

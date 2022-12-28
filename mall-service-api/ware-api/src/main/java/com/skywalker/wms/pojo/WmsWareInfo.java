@@ -33,7 +33,7 @@ public class WmsWareInfo implements Serializable{
 	private String address; // 仓库地址
 
     @Column(name = "areacode")
-	private String areacode; // 区域编码
+	private String areaCode; // 区域编码
 
 
 

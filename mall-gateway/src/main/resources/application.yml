@@ -20,6 +20,7 @@ spring:
 
 
       routes:
+        # 文件上传服务
         - id: file_route
           uri: lb://file-service
           predicates:
@@ -27,6 +28,7 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
+        # 商品服务路由
         - id: product_route
           uri: lb://product-service
           predicates:
@@ -35,6 +37,7 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
             - StripPrefix=1
 
+        # 会员服务路由
         - id: member_route
           uri: lb://member-service
           predicates:
@@ -43,6 +46,7 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
             - StripPrefix=1
 
+        # 优惠服务路由
         - id: coupon_route
           uri: lb://conpon-service
           predicates:
@@ -51,6 +55,16 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
             - StripPrefix=1
 
+        # 仓储服务路由
+        - id: ware_route
+          uri: lb://ware-service
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            - StripPrefix=1
+
+        # 后台管理路由
         - id: admin_route
           uri: lb://admin-service
           predicates:

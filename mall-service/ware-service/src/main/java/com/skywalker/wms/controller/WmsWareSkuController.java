@@ -16,8 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/wmsWareSku")
-@CrossOrigin
+@RequestMapping("/wareSku")
 public class WmsWareSkuController {
 
     @Autowired

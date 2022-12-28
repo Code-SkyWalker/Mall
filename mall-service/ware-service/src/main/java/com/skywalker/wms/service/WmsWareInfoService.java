@@ -35,9 +35,9 @@ public interface WmsWareInfoService {
 
     /***
      * 删除WmsWareInfo
-     * @param id
+     * @param ids
      */
-    void delete(Long id);
+    void delete(List<Long> ids);
 
     /***
      * 修改WmsWareInfo数据

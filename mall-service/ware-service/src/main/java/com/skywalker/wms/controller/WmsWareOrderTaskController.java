@@ -16,8 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/wmsWareOrderTask")
-@CrossOrigin
+@RequestMapping("/wareOrderTask")
 public class WmsWareOrderTaskController {
 
     @Autowired

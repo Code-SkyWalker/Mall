@@ -16,8 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/wmsPurchaseDetail")
-@CrossOrigin
+@RequestMapping("/purchaseDetail")
 public class WmsPurchaseDetailController {
 
     @Autowired

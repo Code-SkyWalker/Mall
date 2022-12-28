@@ -16,8 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/wmsWareInfo")
-@CrossOrigin
+@RequestMapping("/wareInfo")
 public class WmsWareInfoController {
 
     @Autowired
@@ -64,13 +63,13 @@ public class WmsWareInfoController {
 
     /***
      * 根据ID删除品牌数据
-     * @param id
+     * @param ids
      * @return
      */
-    @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Long id){
+    @PostMapping(value = "/delete" )
+    public Result delete(@RequestBody List<Long> ids){
         //调用WmsWareInfoService实现根据主键删除
-        wmsWareInfoService.delete(id);
+        wmsWareInfoService.delete(ids);
         return Result.ok("删除成功");
     }
 

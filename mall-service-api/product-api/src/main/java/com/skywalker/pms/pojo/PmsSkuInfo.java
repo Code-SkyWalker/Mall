@@ -1,9 +1,6 @@
 package com.skywalker.pms.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,10 +13,7 @@ import java.math.BigDecimal;
  * @Description TODO
  */
 @Table(name="pms_sku_info")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class PmsSkuInfo implements Serializable{
 
 	@Id

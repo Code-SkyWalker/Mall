@@ -19,6 +19,13 @@ public class Result extends HashMap<String, Object> {
         put("msg", "success");
     }
 
+    /**
+     * 获取code
+     */
+    public int getStatusCode() {
+        return (int) get("code");
+    }
+
     public static Result error() {
         return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, "未知异常，请联系管理员");
     }

@@ -1,9 +1,7 @@
 package com.skywalker.pms.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,10 +16,7 @@ import java.time.LocalDateTime;
  * @Description TODO
  */
 @Table(name="pms_spu_info")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class PmsSpuInfo implements Serializable{
 
 	@Id
@@ -48,11 +43,11 @@ public class PmsSpuInfo implements Serializable{
 	private Integer publishStatus;//上架状态[0 - 下架，1 - 上架]
 
     @Column(name = "create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime createTime = LocalDateTime.now();//
 
     @Column(name = "update_time")
-	private LocalDateTime updateTime = LocalDateTime.now();//
-
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateTime = LocalDateTime.now();//
 
 }

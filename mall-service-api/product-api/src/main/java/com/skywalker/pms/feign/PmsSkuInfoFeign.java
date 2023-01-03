@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * @Classname PmsSkuInfoFeign
  * @Description TODO
  */
-@FeignClient(name="pms", contextId = "pmsSkuInfo", path = "/pmsSkuInfo")
+@FeignClient(name="product-service", contextId = "pmsSkuInfo", path = "/skuInfo")
 public interface PmsSkuInfoFeign {
 
     /***

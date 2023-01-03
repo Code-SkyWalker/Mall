@@ -1,4 +1,5 @@
 package com.skywalker.wms.service.impl;
+import com.skywalker.constant.WareConstant;
 import com.skywalker.wms.dao.WmsPurchaseDetailMapper;
 import com.skywalker.wms.pojo.WmsPurchaseDetail;
 import com.skywalker.wms.service.WmsPurchaseDetailService;
@@ -35,7 +36,7 @@ public class WmsPurchaseDetailServiceImpl implements WmsPurchaseDetailService {
         //搜索条件构建
         Example example = createExample(wmsPurchaseDetail);
         //执行搜索
-        return new PageInfo<WmsPurchaseDetail>(wmsPurchaseDetailMapper.selectByExample(example));
+        return new PageInfo<>(wmsPurchaseDetailMapper.selectByExample(example));
     }
 
     /**
@@ -49,7 +50,7 @@ public class WmsPurchaseDetailServiceImpl implements WmsPurchaseDetailService {
         //静态分页
         PageHelper.startPage(page,size);
         //分页查询
-        return new PageInfo<WmsPurchaseDetail>(wmsPurchaseDetailMapper.selectAll());
+        return new PageInfo<>(wmsPurchaseDetailMapper.selectAll());
     }
 
     /**
@@ -122,7 +123,7 @@ public class WmsPurchaseDetailServiceImpl implements WmsPurchaseDetailService {
      */
     @Override
     public void update(WmsPurchaseDetail wmsPurchaseDetail){
-        wmsPurchaseDetailMapper.updateByPrimaryKey(wmsPurchaseDetail);
+        wmsPurchaseDetailMapper.updateByPrimaryKeySelective(wmsPurchaseDetail);
     }
 
     /**
@@ -151,5 +152,20 @@ public class WmsPurchaseDetailServiceImpl implements WmsPurchaseDetailService {
     @Override
     public List<WmsPurchaseDetail> findAll() {
         return wmsPurchaseDetailMapper.selectAll();
+    }
+
+    /**
+     * 根据 采购ID 查询 PurchaseDetail
+     *
+     * @param purchaseIds 采购ID
+     * @return /
+     */
+    @Override
+    public void updateStatusByPurchaseIds(List<Long> purchaseIds, WmsPurchaseDetail wmsPurchaseDetail) {
+        Example example = new Example(WmsPurchaseDetail.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andIn("purchaseId", purchaseIds);
+
+        this.wmsPurchaseDetailMapper.updateByExampleSelective(wmsPurchaseDetail, example);
     }
 }

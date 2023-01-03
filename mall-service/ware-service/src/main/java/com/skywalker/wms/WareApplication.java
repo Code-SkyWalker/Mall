@@ -14,7 +14,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.skywalker.wms.feign"})
+@EnableFeignClients(basePackages = {"com.skywalker.wms.feign", "com.skywalker.pms.feign"})
 @MapperScan(basePackages = {"com.skywalker.wms.dao"})
 public class WareApplication {
 

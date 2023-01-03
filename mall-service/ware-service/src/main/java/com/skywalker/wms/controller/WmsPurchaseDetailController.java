@@ -122,4 +122,6 @@ public class WmsPurchaseDetailController {
         List<WmsPurchaseDetail> list = wmsPurchaseDetailService.findAll();
         return Result.ok("查询成功", list) ;
     }
+
+
 }

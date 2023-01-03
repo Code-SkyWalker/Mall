@@ -63,4 +63,11 @@ public interface WmsPurchaseDetailService {
      * @return
      */
     List<WmsPurchaseDetail> findAll();
+
+    /**
+     * 根据 采购ID 查询 PurchaseDetail
+     * @param purchaseIds 采购ID
+     * @return /
+     */
+    void updateStatusByPurchaseIds(List<Long> purchaseIds, WmsPurchaseDetail wmsPurchaseDetail);
 }

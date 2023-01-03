@@ -1,9 +1,7 @@
 package com.skywalker.wms.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.skywalker.constant.WareConstant;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,6 +17,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class WmsPurchaseDetail implements Serializable{
 
 	@Id

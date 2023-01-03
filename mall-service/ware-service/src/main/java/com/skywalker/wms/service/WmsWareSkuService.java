@@ -63,4 +63,20 @@ public interface WmsWareSkuService {
      * @return
      */
     List<WmsWareSku> findAll();
+
+    /**
+     * sku库存添加库存数量
+     * @param wareId 仓库Id
+     * @param skuId skuId
+     * @param Stock 增加的库存数量
+     */
+    void addStock(Long wareId, Long skuId, Integer Stock);
+
+    /**
+     * sku 查询 ware_sku 是否存在sku
+     * @param wareId wareId
+     * @param skuId skuId
+     * @return /
+     */
+    WmsWareSku findBySkuIdAndWareId(Long wareId, Long skuId);
 }

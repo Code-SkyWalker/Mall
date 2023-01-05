@@ -1,5 +1,7 @@
 package com.skywalker.pms.service.impl;
 import com.skywalker.pms.dao.PmsSkuSaleAttrValueMapper;
+import com.skywalker.pms.pojo.PmsAttr;
+import com.skywalker.pms.pojo.PmsProductAttrValue;
 import com.skywalker.pms.pojo.PmsSkuSaleAttrValue;
 import com.skywalker.pms.service.PmsSkuSaleAttrValueService;
 import com.github.pagehelper.PageHelper;
@@ -148,4 +150,5 @@ public class PmsSkuSaleAttrValueServiceImpl implements PmsSkuSaleAttrValueServic
     public List<PmsSkuSaleAttrValue> findAll() {
         return pmsSkuSaleAttrValueMapper.selectAll();
     }
+
 }

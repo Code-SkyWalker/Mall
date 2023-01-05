@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/pmsSkuSaleAttrValue")
+@RequestMapping("/skuSaleAttrValue")
 @CrossOrigin
 public class PmsSkuSaleAttrValueController {
 

@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class PurchaseDetail {
 
-    private Long PurchaseDetailId;      // 需求Id
+    private Long itemId;      // 需求Id
     private Integer status;             // 需求状态
     private String reason;              // 原因(失败)
 }

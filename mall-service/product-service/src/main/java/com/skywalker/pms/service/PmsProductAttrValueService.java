@@ -1,6 +1,8 @@
 package com.skywalker.pms.service;
 import com.skywalker.pms.pojo.PmsProductAttrValue;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.pojo.PmsSkuSaleAttrValue;
+
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -9,41 +11,12 @@ import java.util.List;
  */
 public interface PmsProductAttrValueService {
 
-    /***
-     * PmsProductAttrValue多条件分页查询
-     * @param pmsProductAttrValue
-     * @param page
-     * @param size
+    /**
+     * 根据attr查询 spu 产品的基本属性
+     * @param spuId
      * @return
      */
-    PageInfo<PmsProductAttrValue> findPage(PmsProductAttrValue pmsProductAttrValue, int page, int size);
-
-    /***
-     * PmsProductAttrValue分页查询
-     * @param page
-     * @param size
-     * @return
-     */
-    PageInfo<PmsProductAttrValue> findPage(int page, int size);
-
-    /***
-     * PmsProductAttrValue多条件搜索方法
-     * @param pmsProductAttrValue
-     * @return
-     */
-    List<PmsProductAttrValue> findList(PmsProductAttrValue pmsProductAttrValue);
-
-    /***
-     * 删除PmsProductAttrValue
-     * @param id
-     */
-    void delete(Long id);
-
-    /***
-     * 修改PmsProductAttrValue数据
-     * @param pmsProductAttrValue
-     */
-    void update(PmsProductAttrValue pmsProductAttrValue);
+    List<PmsProductAttrValue> findBaseAttrBySpuId(Long spuId);
 
     /***
      * 新增PmsProductAttrValue
@@ -51,16 +24,8 @@ public interface PmsProductAttrValueService {
      */
     void add(PmsProductAttrValue pmsProductAttrValue);
 
-    /**
-     * 根据ID查询PmsProductAttrValue
-     * @param id
-     * @return
-     */
-     PmsProductAttrValue findById(Long id);
+    void update(List<PmsProductAttrValue> list, Long spuId);
 
-    /***
-     * 查询所有PmsProductAttrValue
-     * @return
-     */
-    List<PmsProductAttrValue> findAll();
+
+
 }

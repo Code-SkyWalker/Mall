@@ -333,7 +333,8 @@ public class WmsPurchaseServiceImpl implements WmsPurchaseService {
     @Transactional
     public void done(WarePurchaseDoneVo warePurchaseDoneVo) {
         // 2. 改变采购项状态
-        List<PurchaseDetail> purchaseDetails = warePurchaseDoneVo.getPurchaseDetails();
+        List<PurchaseDetail> purchaseDetails = warePurchaseDoneVo.getItems();
+        System.out.println("purchaseDetails = " + purchaseDetails);
         int success = WareConstant.PurchaseDetailStatusEnum.ACCOMPLISHED.getCode();
         boolean isDone = true;
         if (!purchaseDetails.isEmpty()) {
@@ -341,7 +342,7 @@ public class WmsPurchaseServiceImpl implements WmsPurchaseService {
                 // 只要有一个需求没有完成, isDone = false;
                 if (ele.getStatus() != success) isDone = false;
                 WmsPurchaseDetail wmsPurchaseDetail = WmsPurchaseDetail.builder()
-                        .id(ele.getPurchaseDetailId())
+                        .id(ele.getItemId())
                         .status(ele.getStatus())
                         .build();
                 this.wmsPurchaseDetailService.update(wmsPurchaseDetail);
@@ -349,7 +350,7 @@ public class WmsPurchaseServiceImpl implements WmsPurchaseService {
                 // 3. 将成功的采购的商品进行入库(修改商品数量)
                 if (ele.getStatus() == success) {
                     // 查询采购需求
-                    WmsPurchaseDetail purchaseDetail = this.wmsPurchaseDetailService.findById(ele.getPurchaseDetailId());
+                    WmsPurchaseDetail purchaseDetail = this.wmsPurchaseDetailService.findById(ele.getItemId());
                     // 更新 wareSku 中的数量
                     this.wmsWareSkuService.addStock(purchaseDetail.getWareId(), purchaseDetail.getSkuId(), purchaseDetail.getSkuNum());
                 }
@@ -357,7 +358,7 @@ public class WmsPurchaseServiceImpl implements WmsPurchaseService {
         }
 
         // 1. 改变采购单状态
-        Long purchaseId = warePurchaseDoneVo.getPurchaseId();
+        Long purchaseId = warePurchaseDoneVo.getId();
         int ACCOMPLISHED = WareConstant.PurchaseStatusEnum.ACCOMPLISHED.getCode();
         int EXCEPTION = WareConstant.PurchaseStatusEnum.EXCEPTION.getCode();
         WmsPurchase wmsPurchase = WmsPurchase.builder()

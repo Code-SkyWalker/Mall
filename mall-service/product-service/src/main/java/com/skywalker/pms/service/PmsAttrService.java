@@ -4,6 +4,8 @@ import com.github.pagehelper.PageInfo;
 import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 
 import java.util.List;
+import java.util.Map;
+
 /**
  * @Author Code SkyWalker
  * @Classname PmsAttrService
@@ -118,4 +120,5 @@ public interface PmsAttrService {
      * @return /
      */
     List<PmsAttr> findAttrByRelatedAttrGroup(Long attrGroupId);
+
 }

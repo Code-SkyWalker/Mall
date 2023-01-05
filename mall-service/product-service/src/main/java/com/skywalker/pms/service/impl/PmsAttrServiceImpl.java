@@ -5,6 +5,7 @@ import com.skywalker.pms.dao.PmsAttrMapper;
 import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrAttrgroupRelation;
 import com.skywalker.pms.pojo.PmsAttrGroup;
+import com.skywalker.pms.pojo.PmsProductAttrValue;
 import com.skywalker.pms.service.PmsAttrAttrgroupRelationService;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.skywalker.pms.service.PmsAttrService;
@@ -303,4 +304,6 @@ public class PmsAttrServiceImpl implements PmsAttrService {
     public List<PmsAttr> findAttrByRelatedAttrGroup(Long attrGroupId) {
         return pmsAttrMapper.findAttrByRelatedAttrGroup(attrGroupId);
     }
+
+
 }

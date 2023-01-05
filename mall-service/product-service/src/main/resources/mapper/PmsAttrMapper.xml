@@ -80,5 +80,4 @@
         WHERE b.attr_group_id = #{attrGroupId} AND a.attr_type = 1
     </select>
 
-
 </mapper>

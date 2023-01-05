@@ -1,4 +1,5 @@
 package com.skywalker.pms.service;
+import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsSkuSaleAttrValue;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
@@ -63,4 +64,5 @@ public interface PmsSkuSaleAttrValueService {
      * @return
      */
     List<PmsSkuSaleAttrValue> findAll();
+
 }

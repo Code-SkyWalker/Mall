@@ -8,6 +8,7 @@ import com.skywalker.wms.pojo.WmsWareSku;
 import com.skywalker.wms.service.WmsWareSkuService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -178,8 +179,11 @@ public class WmsWareSkuServiceImpl implements WmsWareSkuService {
     public void addStock(Long wareId, Long skuId, Integer stock) {
         // ware_sku 查询是否存在: 存在库存相加; 不存在: 添加
         WmsWareSku wmsWareSkus = this.findBySkuIdAndWareId(wareId, skuId);
+
         // 查询skuName
-        PmsSkuInfo pmsSkuInfo = (PmsSkuInfo) this.pmsSkuInfoFeign.findById(skuId).get("data");
+        Object data = this.pmsSkuInfoFeign.findById(skuId).get("data");
+        PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
+        BeanUtils.copyProperties(data, pmsSkuInfo);
 
         if (wmsWareSkus == null) { // 不存在
             WmsWareSku wmsWareSku = WmsWareSku.builder()

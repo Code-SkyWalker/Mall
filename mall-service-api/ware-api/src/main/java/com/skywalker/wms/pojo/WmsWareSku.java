@@ -12,10 +12,9 @@ import java.io.Serializable;
  * @Description TODO
  */
 @Table(name="wms_ware_sku")
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class WmsWareSku implements Serializable{
 

@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Builder
 public class WarePurchaseDoneVo {
-    private Long purchaseId;
+    private Long id;
 
-    private List<PurchaseDetail> purchaseDetails;
+    private List<PurchaseDetail> items;
 }

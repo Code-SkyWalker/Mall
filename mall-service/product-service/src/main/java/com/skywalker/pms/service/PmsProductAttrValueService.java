@@ -1,7 +1,5 @@
 package com.skywalker.pms.service;
 import com.skywalker.pms.pojo.PmsProductAttrValue;
-import com.github.pagehelper.PageInfo;
-import com.skywalker.pms.pojo.PmsSkuSaleAttrValue;
 
 import java.util.List;
 /**
@@ -23,6 +21,12 @@ public interface PmsProductAttrValueService {
      * @param pmsProductAttrValue
      */
     void add(PmsProductAttrValue pmsProductAttrValue);
+
+    /**
+     * 根据spuId 删除
+     * @param spuId
+     */
+    void delete(Long spuId);
 
     void update(List<PmsProductAttrValue> list, Long spuId);
 

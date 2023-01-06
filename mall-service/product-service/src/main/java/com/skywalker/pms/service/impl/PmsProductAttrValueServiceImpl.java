@@ -1,15 +1,17 @@
 package com.skywalker.pms.service.impl;
+
 import com.skywalker.pms.dao.PmsProductAttrValueMapper;
 import com.skywalker.pms.pojo.PmsProductAttrValue;
-import com.skywalker.pms.pojo.PmsSkuSaleAttrValue;
 import com.skywalker.pms.service.PmsProductAttrValueService;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
+
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @Author Code SkyWalker
  * @Classname PmsProductAttrValueServiceImpl
@@ -29,6 +31,7 @@ public class PmsProductAttrValueServiceImpl implements PmsProductAttrValueServic
      */
     @Override
     public List<PmsProductAttrValue> findBaseAttrBySpuId(Long spuId) {
+        if (spuId == null) return null;
         Example example = new Example(PmsProductAttrValue.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("spuId", spuId);
@@ -37,11 +40,27 @@ public class PmsProductAttrValueServiceImpl implements PmsProductAttrValueServic
 
     /**
      * 增加PmsProductAttrValue
+     *
      * @param pmsProductAttrValue
      */
     @Override
-    public void add(PmsProductAttrValue pmsProductAttrValue){
-        pmsProductAttrValueMapper.insert(pmsProductAttrValue);
+    public void add(PmsProductAttrValue pmsProductAttrValue) {
+        pmsProductAttrValueMapper.insertSelective(pmsProductAttrValue);
+    }
+
+    /**
+     * 根据spuId 删除
+     *
+     * @param spuId
+     */
+    @Override
+    public void delete(Long spuId) {
+        if (spuId == null) return;
+        Example example = new Example(PmsProductAttrValue.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("spuId", spuId);
+
+        this.pmsProductAttrValueMapper.deleteByExample(example);
     }
 
     /**
@@ -51,16 +70,15 @@ public class PmsProductAttrValueServiceImpl implements PmsProductAttrValueServic
      * @param spuId spuId
      */
     @Override
+    @Transactional
     public void update(List<PmsProductAttrValue> list, Long spuId) {
-        if (!list.isEmpty()) {
-            Example example = new Example(PmsProductAttrValue.class);
-            Example.Criteria criteria = example.createCriteria();
-            criteria.andEqualTo("spuId", spuId);
+        if (list.isEmpty()) return;
 
-            list.forEach(ele -> {
-                criteria.andEqualTo("attrId", ele.getAttrId());
-                this.pmsProductAttrValueMapper.updateByExampleSelective(ele, example);
-            });
-        }
+        this.delete(spuId);
+
+        list.stream()
+            .peek(ele -> ele.setSpuId(spuId))
+            .forEach(this::add);
+
     }
 }

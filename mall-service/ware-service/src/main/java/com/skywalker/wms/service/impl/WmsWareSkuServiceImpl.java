@@ -1,6 +1,5 @@
 package com.skywalker.wms.service.impl;
 
-import com.skywalker.entity.Result;
 import com.skywalker.pms.feign.PmsSkuInfoFeign;
 import com.skywalker.pms.pojo.PmsSkuInfo;
 import com.skywalker.wms.dao.WmsWareSkuMapper;
@@ -134,7 +133,11 @@ public class WmsWareSkuServiceImpl implements WmsWareSkuService {
      */
     @Override
     public void update(WmsWareSku wmsWareSku) {
-        wmsWareSkuMapper.updateByPrimaryKeySelective(wmsWareSku);
+        Example example = new Example(WmsWareSku.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("wareId", wmsWareSku.getWareId());
+        criteria.andEqualTo("skuId", wmsWareSku.getSkuId());
+        wmsWareSkuMapper.updateByExampleSelective(wmsWareSku, example);
     }
 
     /**
@@ -193,8 +196,10 @@ public class WmsWareSkuServiceImpl implements WmsWareSkuService {
             this.add(wmsWareSku);
         } else { // 存在
             WmsWareSku wmsWareSku = WmsWareSku.builder()
-                    .skuId(skuId).wareId(wareId).stock(wmsWareSkus.getStock() + stock)
+                    .skuId(skuId)
+                    .wareId(wareId)
                     .skuName(pmsSkuInfo.getSkuName())
+                    .stock(wmsWareSkus.getStock() + stock)
                     .build();
             this.update(wmsWareSku);
         }

@@ -23,6 +23,11 @@ public class WmsWareSkuController {
     @Autowired
     private WmsWareSkuService wmsWareSkuService;
 
+    @PostMapping("/hasStock")
+    public Result hasStock(@RequestBody List<Long> skuIds) {
+        return Result.ok("查询成功", this.wmsWareSkuService.getSkuHasStock(skuIds));
+    }
+
     /***
      * WmsWareSku分页条件搜索实现
      * @param wmsWareSku

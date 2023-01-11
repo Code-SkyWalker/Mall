@@ -334,7 +334,7 @@ public class WmsPurchaseServiceImpl implements WmsPurchaseService {
     public void done(WarePurchaseDoneVo warePurchaseDoneVo) {
         // 2. 改变采购项状态
         List<PurchaseDetail> purchaseDetails = warePurchaseDoneVo.getItems();
-        System.out.println("purchaseDetails = " + purchaseDetails);
+
         int success = WareConstant.PurchaseDetailStatusEnum.ACCOMPLISHED.getCode();
         boolean isDone = true;
         if (!purchaseDetails.isEmpty()) {

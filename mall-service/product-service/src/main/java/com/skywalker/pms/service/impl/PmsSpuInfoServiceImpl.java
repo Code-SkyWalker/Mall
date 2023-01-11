@@ -6,11 +6,15 @@ import com.skywalker.pms.pojo.*;
 import com.skywalker.pms.service.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.pms.to.elastic.SkuElasticModel;
 import com.skywalker.pms.vo.*;
 import com.skywalker.sms.feign.SmsSkuFullReductionFeign;
 import com.skywalker.sms.feign.SmsSpuBoundsFeign;
 import com.skywalker.sms.pojo.SmsSpuBounds;
 import com.skywalker.to.SkuCouponTo;
+import com.skywalker.wms.feign.WmsWareSkuFeign;
+import com.skywalker.wms.pojo.WmsWareSku;
+import com.skywalker.wms.vo.HasStockVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +24,10 @@ import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @Author Code SkyWalker
@@ -59,6 +66,15 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
     @Autowired
     private SmsSkuFullReductionFeign smsSkuFullReductionFeign;
+
+    @Autowired
+    private WmsWareSkuFeign wmsWareSkuFeign;
+
+    @Autowired
+    private PmsBrandService pmsBrandService;
+
+    @Autowired
+    private PmsCategoryService pmsCategoryService;
 
     /**
      * PmsSpuInfo条件+分页查询
@@ -313,6 +329,79 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
                     System.out.println("远程调用服务失败");
                 }
             }
+        });
+    }
+
+    /**
+     * 商品上架
+     *
+     * @param spuId spuId
+     */
+    @Override
+    public void up(Long spuId) {
+        List<SkuElasticModel> skuEsModel = new ArrayList<>();
+
+        // 查询 与 spuId 相符的Sku
+        PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
+        pmsSkuInfo.setSpuId(spuId);
+        List<PmsSkuInfo> skus = this.pmsSkuInfoService.findList(pmsSkuInfo);
+
+        if (skus.isEmpty()) return;
+
+        // 查询属性
+        // 查询 spu 属性表, 查出所有spu属性id
+        List<Long> baseAttrIds = this.pmsProductAttrValueService.findBaseAttrBySpuId(spuId)
+                .stream().map(PmsProductAttrValue::getAttrId)
+                .collect(Collectors.toList());
+
+        // 根据查询出的 attrID 查询 属性总表
+        List<SkuElasticModel.Attr> attrs = this.pmsAttrService.findByIds(baseAttrIds)
+                .stream().filter(ele -> ele.getAttrType() == 1)
+                .map(ele -> {
+                    SkuElasticModel.Attr attr = new SkuElasticModel.Attr();
+                    BeanUtils.copyProperties(ele, attr);
+                    return attr;
+                })
+                .collect(Collectors.toList());
+
+        // 查询库存
+        List<Long> skuIds = skus.stream().map(PmsSkuInfo::getSkuId).collect(Collectors.toList());
+
+        Map<Long, Boolean> hasStockMap = null;
+
+        try {
+            @SuppressWarnings("unchecked")
+            List<HasStockVo> wareSku = (List<HasStockVo>) this.wmsWareSkuFeign.getSkuHasStock(skuIds).get("data");
+            hasStockMap = wareSku.stream().collect(Collectors.toMap(HasStockVo::getSkuId, HasStockVo::getHasStock));
+        } catch (Exception ignored) {
+            ;
+        }
+
+        Map<Long, Boolean> finalHasStockMap = hasStockMap;
+        skus.forEach(item -> {
+            // 组装需要的数据
+            SkuElasticModel esModel = new SkuElasticModel();
+            BeanUtils.copyProperties(item, esModel);
+
+            esModel.setSkuPrice(item.getPrice());
+            esModel.setSkuImg(item.getSkuDefaultImg());
+            // 设置热度评分, 默认为0
+            esModel.setHotScore(0L);
+
+            // 如果远程请求库存失败, 默认设置为有库存
+            if (finalHasStockMap == null) esModel.setHasStock(true);
+            else esModel.setHasStock(finalHasStockMap.get(item.getSkuId()));
+
+            // 查询品牌名称
+            PmsBrand pmsBrand = this.pmsBrandService.findById(item.getBrandId());
+            esModel.setBrandName(pmsBrand.getName());
+            esModel.setBrandImg(pmsBrand.getLogo());
+
+            // 查询分类名称
+            PmsCategory pmsCategory = this.pmsCategoryService.findById(item.getCatalogId());
+            esModel.setCategoryName(pmsCategory.getName());
+
+            esModel.setAttrs(attrs);
         });
 
     }

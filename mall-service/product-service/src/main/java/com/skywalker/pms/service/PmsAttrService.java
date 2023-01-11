@@ -121,4 +121,10 @@ public interface PmsAttrService {
      */
     List<PmsAttr> findAttrByRelatedAttrGroup(Long attrGroupId);
 
+    /**
+     * 根据 AttrIds 批量查询 属性
+     * @param attrIds 多个attrIds
+     * @return
+     */
+    List<PmsAttr> findByIds(List<Long> attrIds);
 }

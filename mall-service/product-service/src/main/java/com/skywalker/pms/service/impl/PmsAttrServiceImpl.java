@@ -305,5 +305,17 @@ public class PmsAttrServiceImpl implements PmsAttrService {
         return pmsAttrMapper.findAttrByRelatedAttrGroup(attrGroupId);
     }
 
-
+    /**
+     * 根据 AttrIds 批量查询 属性
+     *
+     * @param attrIds 多个attrIds
+     * @return
+     */
+    @Override
+    public List<PmsAttr> findByIds(List<Long> attrIds) {
+        Example example = new Example(PmsAttr.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("attrId", attrIds);
+        return this.pmsAttrMapper.selectByExample(example)  ;
+    }
 }

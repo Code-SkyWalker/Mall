@@ -71,4 +71,10 @@ public interface PmsSpuInfoService {
      * @param vo 商品vo类
      */
     void saveSpuInfo(SpuSaveVo vo);
+
+    /**
+     * 商品上架
+     * @param spuId spuId
+     */
+    void up(Long spuId);
 }

@@ -7,6 +7,7 @@ import com.skywalker.wms.pojo.WmsWareSku;
 import com.skywalker.wms.service.WmsWareSkuService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.wms.vo.HasStockVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -219,5 +220,16 @@ public class WmsWareSkuServiceImpl implements WmsWareSkuService {
         criteria.andEqualTo("wareId", wareId);
         criteria.andEqualTo("skuId", skuId);
         return this.wmsWareSkuMapper.selectOneByExample(example);
+    }
+
+    /**
+     * 查询库存
+     *
+     * @param skuIds List<Long>
+     * @return wmsWareSku
+     */
+    @Override
+    public List<HasStockVo> getSkuHasStock(List<Long> skuIds) {
+        return this.wmsWareSkuMapper.getSkuHasStock(skuIds);
     }
 }

@@ -25,6 +25,12 @@ public class PmsSpuInfoController {
     @Autowired
     private PmsSpuInfoService pmsSpuInfoService;
 
+    @GetMapping("/{spuId}/up")
+    public Result spuUp(@PathVariable(name = "spuId") Long spuId) {
+        this.pmsSpuInfoService.up(spuId);
+        return Result.ok("上架成功");
+    }
+
     /***
      * PmsSpuInfo分页条件搜索实现
      * @param pmsSpuInfo

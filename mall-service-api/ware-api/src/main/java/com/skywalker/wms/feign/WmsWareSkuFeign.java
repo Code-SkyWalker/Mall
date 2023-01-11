@@ -5,12 +5,14 @@ import com.skywalker.wms.pojo.WmsWareSku;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @Author Code SkyWalker
  * @Classname WmsWareSkuFeign
  * @Description TODO
  */
-@FeignClient(name="wms", contextId = "wmsWareSku", path = "/wmsWareSku")
+@FeignClient(name="ware-service", contextId = "wmsWareSku", path = "/wareSku")
 public interface WmsWareSkuFeign {
 
     /***
@@ -34,11 +36,19 @@ public interface WmsWareSkuFeign {
 
     /***
      * 多条件搜索品牌数据
-     * @param wmsWareSku
+     * @param skuIds skuIds
      * @return
      */
-    @PostMapping(value = "/search" )
-    Result findList(@RequestBody(required = false) WmsWareSku wmsWareSku);
+    @PostMapping(value = "/hasStock")
+    Result getSkuHasStock(@RequestBody List<Long> skuIds);
+
+    /**
+     * 查询 sku库存
+     * @param SkuId skuId
+     * @return Result
+     */
+    @PostMapping("/{skuId}")
+    Result findOneBySkuId(@PathVariable(name = "skuId") Long SkuId);
 
     /***
      * 根据ID删除品牌数据

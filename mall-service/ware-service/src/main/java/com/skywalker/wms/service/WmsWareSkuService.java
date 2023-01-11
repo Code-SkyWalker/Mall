@@ -1,6 +1,9 @@
 package com.skywalker.wms.service;
+import com.skywalker.entity.Result;
 import com.skywalker.wms.pojo.WmsWareSku;
 import com.github.pagehelper.PageInfo;
+import com.skywalker.wms.vo.HasStockVo;
+
 import java.util.List;
 /**
  * @Author Code SkyWalker
@@ -79,4 +82,11 @@ public interface WmsWareSkuService {
      * @return /
      */
     WmsWareSku findBySkuIdAndWareId(Long wareId, Long skuId);
+
+    /**
+     * 查询库存
+     * @param skuIds List<skuIds>
+     * @return wmsWareSku
+     */
+    List<HasStockVo> getSkuHasStock(List<Long> skuIds);
 }

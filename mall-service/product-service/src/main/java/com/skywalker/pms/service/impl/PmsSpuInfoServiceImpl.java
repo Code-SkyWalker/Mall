@@ -404,5 +404,8 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
             esModel.setAttrs(attrs);
         });
 
+        // 将数据推入elasticsearch
+
+
     }
 }

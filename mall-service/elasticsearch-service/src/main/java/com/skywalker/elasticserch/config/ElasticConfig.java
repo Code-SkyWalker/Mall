@@ -45,7 +45,7 @@ public class ElasticConfig {
      * @return ElasticsearchClient
      */
     @Bean
-    public ElasticsearchClient syncClient() {
+    public ElasticsearchClient elasticsearchClient() {
         // And create the API client
         return new ElasticsearchClient(transport());
     }
@@ -54,8 +54,8 @@ public class ElasticConfig {
      * 异步非阻塞 客户端
      * @return ElasticsearchAsyncClient
      */
-    @Bean
-    public ElasticsearchAsyncClient asyncClient() {
-        return new ElasticsearchAsyncClient(transport());
-    }
+//    @Bean
+//    public ElasticsearchAsyncClient asyncClient() {
+//        return new ElasticsearchAsyncClient(transport());
+//    }
 }

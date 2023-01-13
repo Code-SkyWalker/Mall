@@ -74,6 +74,12 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
+        <!-- 添加loadbalancer -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+        </dependency>
+
         <!-- 在SpringCloud 2020.* 版本把bootstrap禁用了，导致在读取文件的时候读取不到而报错 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

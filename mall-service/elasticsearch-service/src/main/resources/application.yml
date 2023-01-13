@@ -10,3 +10,7 @@ spring:
         server-addr: 127.0.0.1:8848
   elasticsearch:
     uris: 124.221.97.152:9200
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true

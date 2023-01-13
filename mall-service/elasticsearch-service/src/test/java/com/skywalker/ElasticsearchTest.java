@@ -1,16 +1,13 @@
 package com.skywalker;
 
-//import co.elastic.clients.elasticsearch.ElasticsearchAsyncClient;
-//import co.elastic.clients.elasticsearch.ElasticsearchClient;
-//import co.elastic.clients.elasticsearch.core.SearchResponse;
-//import co.elastic.clients.elasticsearch.core.search.Hit;
-import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import com.skywalker.elasticsearch.pojo.Item;
 import com.skywalker.elasticserch.SearchApplication;
+import com.skywalker.elasticserch.dao.ItemRepository;
+import org.elasticsearch.client.ElasticsearchClient;
+import org.elasticsearch.client.RestClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
 
 /**
@@ -23,13 +20,26 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 public class ElasticsearchTest {
 
     @Autowired
-    ElasticsearchClient ElasticsearchClient;
+    ItemRepository itemRepository;
 
     /**
      * 使用spring-data-elasticsearch 创建索引
      */
     @Test
-    public void createIndex() {
-        System.out.println("ElasticsearchClient = " + ElasticsearchClient);
+    public void esClientTest() {
+        Item item = new Item();
+        item.setId(1L);
+        item.setPrice(0.1);
+        item.setCategory("category");
+        item.setImages("http://localhost:8080/list");
+        item.setBrand("brand");
+        item.setTitle("title");
+        itemRepository.save(item);
     }
+
+    @Test
+    public void esRestClientTest() {
+    }
+
+
 }

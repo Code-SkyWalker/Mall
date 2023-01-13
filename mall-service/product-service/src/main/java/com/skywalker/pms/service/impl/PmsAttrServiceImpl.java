@@ -5,13 +5,11 @@ import com.skywalker.pms.dao.PmsAttrMapper;
 import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrAttrgroupRelation;
 import com.skywalker.pms.pojo.PmsAttrGroup;
-import com.skywalker.pms.pojo.PmsProductAttrValue;
 import com.skywalker.pms.service.PmsAttrAttrgroupRelationService;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.skywalker.pms.service.PmsAttrService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,10 +38,6 @@ public class PmsAttrServiceImpl implements PmsAttrService {
 
     @Autowired
     private PmsAttrAttrgroupRelationService pmsAttrAttrgroupRelationService;
-
-    @Autowired
-    private PmsAttrService pmsAttrService;
-
 
     /**
      * PmsAttr条件+分页查询

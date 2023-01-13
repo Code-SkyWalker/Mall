@@ -12,7 +12,7 @@ spring:
           # 可以配置本次跨域检测的有效期maxAge, 在maxAge时间范围内, 统统允许跨域
         cors-configurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOriginPatterns: "*"
             allowedHeaders: "*"
             allowedMethods: "*"
             allowCredentials: true
@@ -58,6 +58,15 @@ spring:
         # 仓储服务路由
         - id: ware_route
           uri: lb://ware-service
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            - StripPrefix=1
+
+        # elasticsearch服务路由
+        - id: elastic_route
+          uri: lb://elastic-service
           predicates:
             - Path=/api/ware/**
           filters:

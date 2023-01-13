@@ -1,19 +1,19 @@
 package com.skywalker.pms.service.impl;
 
+import com.skywalker.elasticsearch.feign.GoodsFeign;
+import com.skywalker.elasticsearch.to.SkuElasticModel;
 import com.skywalker.entity.Result;
 import com.skywalker.pms.dao.PmsSpuInfoMapper;
 import com.skywalker.pms.pojo.*;
 import com.skywalker.pms.service.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.skywalker.pms.to.elastic.SkuElasticModel;
 import com.skywalker.pms.vo.*;
 import com.skywalker.sms.feign.SmsSkuFullReductionFeign;
 import com.skywalker.sms.feign.SmsSpuBoundsFeign;
 import com.skywalker.sms.pojo.SmsSpuBounds;
 import com.skywalker.to.SkuCouponTo;
 import com.skywalker.wms.feign.WmsWareSkuFeign;
-import com.skywalker.wms.pojo.WmsWareSku;
 import com.skywalker.wms.vo.HasStockVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +75,9 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
     @Autowired
     private PmsCategoryService pmsCategoryService;
+
+    @Autowired
+    private GoodsFeign goodsFeign;
 
     /**
      * PmsSpuInfo条件+分页查询
@@ -338,6 +341,7 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
      * @param spuId spuId
      */
     @Override
+    @Transactional
     public void up(Long spuId) {
         List<SkuElasticModel> skuEsModel = new ArrayList<>();
 
@@ -378,7 +382,7 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
         }
 
         Map<Long, Boolean> finalHasStockMap = hasStockMap;
-        skus.forEach(item -> {
+        List<SkuElasticModel> skuList = skus.stream().map(item -> {
             // 组装需要的数据
             SkuElasticModel esModel = new SkuElasticModel();
             BeanUtils.copyProperties(item, esModel);
@@ -402,10 +406,12 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
             esModel.setCategoryName(pmsCategory.getName());
 
             esModel.setAttrs(attrs);
-        });
+
+            return esModel;
+        }).collect(Collectors.toList());
 
         // 将数据推入elasticsearch
-
+        goodsFeign.pushAll(skuEsModel);
 
     }
 }

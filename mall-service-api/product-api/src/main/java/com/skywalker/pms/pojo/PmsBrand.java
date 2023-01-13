@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -48,7 +47,6 @@ public class PmsBrand implements Serializable{
 	private Integer showStatus;//显示状态[0-不显示；1-显示]
 
     @Column(name = "first_letter")
-    @Length(max = 1, groups = {ValidAdd.class, ValidUpdate.class})
     @Pattern(regexp = "^[a-zA-Z]$", message = "必须是字母", groups = {ValidAdd.class, ValidUpdate.class})
     private String firstLetter;//检索首字母
 

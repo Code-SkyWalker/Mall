@@ -1,14 +1,15 @@
-package com.skywalker.pms.to.elastic;
+package com.skywalker.elasticsearch.to;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SkuElasticModel implements Serializable {
 
+    @Id
     private Long skuId; // skuId
 
     private Long spuId; // spuId

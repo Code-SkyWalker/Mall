@@ -1,12 +1,9 @@
 package com.skywalker.pms.controller;
-import com.skywalker.pms.pojo.PmsAttr;
 import com.skywalker.pms.pojo.PmsAttrGroup;
-import com.skywalker.pms.pojo.PmsBrand;
 import com.skywalker.pms.service.PmsAttrGroupService;
 import com.github.pagehelper.PageInfo;
 import com.skywalker.entity.Result ;
 
-import com.skywalker.pms.service.PmsAttrService;
 import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +22,6 @@ public class PmsAttrGroupController {
 
     @Autowired
     private PmsAttrGroupService pmsAttrGroupService;
-
-    @Autowired
-    private PmsAttrService pmsAttrService;
 
     /***
      * PmsAttrGroup分页条件搜索实现

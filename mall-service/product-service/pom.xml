@@ -33,5 +33,10 @@
             <artifactId>ware-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.skywalker</groupId>
+            <artifactId>elasticsearch-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

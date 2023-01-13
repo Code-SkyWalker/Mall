@@ -9,6 +9,7 @@ import com.skywalker.pms.service.PmsAttrService;
 import com.skywalker.pms.vo.AttrGroupsAndAttrs;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -30,6 +31,7 @@ public class PmsAttrGroupServiceImpl implements PmsAttrGroupService {
     private PmsAttrGroupMapper pmsAttrGroupMapper;
 
     @Autowired
+    @Lazy
     private PmsAttrService pmsAttrService;
 
 

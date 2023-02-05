@@ -23,7 +23,7 @@ public class MallCorsConfiguration {
         // 配置跨域
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
-        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedOriginPattern("*");
         corsConfiguration.setAllowCredentials(true);
 
         source.registerCorsConfiguration("/**", corsConfiguration);

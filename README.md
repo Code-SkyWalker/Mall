@@ -11,7 +11,7 @@
 | Springsession      | 分布式缓存   | [https://projects.spring.io/spring-session](https://gitee.com/link?target=https%3A%2F%2Fprojects.spring.io%2Fspring-session) |
 | Redisson           | 分布式锁     | [https://github.com/redisson/redisson](https://gitee.com/link?target=https%3A%2F%2Fgithub.com%2Fredisson%2Fredisson) |
 | Docker             | 应用容器引擎 | [https://www.docker.com](https://gitee.com/link?target=https%3A%2F%2Fwww.docker.com) |
-| FastDFS            | 对象云存储   | [https://github.com/happyfish100/fastdfs](https://github.com/happyfish100/fastdfs) |
+| FastDFS            | 存储   | [https://github.com/happyfish100/fastdfs](https://github.com/happyfish100/fastdfs) |
 
 #### 开发工具
 

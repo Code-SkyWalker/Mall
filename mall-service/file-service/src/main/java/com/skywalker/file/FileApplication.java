@@ -1,7 +1,10 @@
 package com.skywalker.file;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
+import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -11,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Description TODO
  */
 @EnableDiscoveryClient
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DruidDataSourceAutoConfigure.class, MybatisAutoConfiguration.class})
 public class FileApplication {
     public static void main(String[] args) {
         SpringApplication.run(FileApplication.class, args);

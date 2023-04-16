@@ -25,7 +25,7 @@ public class GoodsElasticController {
     private GoodsRepository goodsRepository;
 
     @PostMapping("/pushAll")
-    public Result pushAll(@RequestBody List<Goods> goods) {
+    public Result productStatusUp(@RequestBody List<Goods> goods) {
         goodsRepository.saveAll(goods);
         return Result.ok();
     }

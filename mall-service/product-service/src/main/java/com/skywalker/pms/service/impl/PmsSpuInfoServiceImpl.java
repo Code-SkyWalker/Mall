@@ -1,5 +1,6 @@
 package com.skywalker.pms.service.impl;
 
+import com.skywalker.constant.ProductConstant;
 import com.skywalker.elasticsearch.feign.GoodsFeign;
 import com.skywalker.elasticsearch.to.SkuElasticModel;
 import com.skywalker.entity.Result;
@@ -15,6 +16,7 @@ import com.skywalker.sms.pojo.SmsSpuBounds;
 import com.skywalker.to.SkuCouponTo;
 import com.skywalker.wms.feign.WmsWareSkuFeign;
 import com.skywalker.wms.vo.HasStockVo;
+import lombok.val;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,7 @@ import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -184,7 +187,7 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
      */
     @Override
     public void update(PmsSpuInfo pmsSpuInfo) {
-        pmsSpuInfoMapper.updateByPrimaryKey(pmsSpuInfo);
+        pmsSpuInfoMapper.updateByPrimaryKeySelective(pmsSpuInfo);
     }
 
     /**
@@ -337,7 +340,18 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
 
     /**
      * 商品上架
-     *
+     * es数据类型: {
+     *     skuId: 1,
+     *     spuId: 11,
+     *     skuTitle: 华为,
+     *     price: 998,
+     *     saleCount: 99,
+     *     attrs: [
+     *          {"尺寸": "5寸"},
+     *          {"CPU": "高通945"},
+     *          {"分辨率": "2.5k"}
+     *     ]
+     * }
      * @param spuId spuId
      */
     @Override
@@ -345,7 +359,9 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
     public void up(Long spuId) {
         List<SkuElasticModel> skuEsModel = new ArrayList<>();
 
-        // 查询 与 spuId 相符的Sku
+        System.out.println("getting hear");
+
+        // 查询出当前spu对应的所有sku信息, 品牌的名字
         PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
         pmsSkuInfo.setSpuId(spuId);
         List<PmsSkuInfo> skus = this.pmsSkuInfoService.findList(pmsSkuInfo);
@@ -358,9 +374,12 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
                 .stream().map(PmsProductAttrValue::getAttrId)
                 .collect(Collectors.toList());
 
+        System.out.println("is baseAttrIds empty? " + baseAttrIds);
+
         // 根据查询出的 attrID 查询 属性总表
         List<SkuElasticModel.Attr> attrs = this.pmsAttrService.findByIds(baseAttrIds)
-                .stream().filter(ele -> ele.getAttrType() == 1)
+                .stream()
+                .filter(ele -> ele.getAttrType() == 1) // 筛选销售类型的属性
                 .map(ele -> {
                     SkuElasticModel.Attr attr = new SkuElasticModel.Attr();
                     BeanUtils.copyProperties(ele, attr);
@@ -371,15 +390,18 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
         // 查询库存
         List<Long> skuIds = skus.stream().map(PmsSkuInfo::getSkuId).collect(Collectors.toList());
 
+        // 查询商品是否含有库存
         Map<Long, Boolean> hasStockMap = null;
 
         try {
             @SuppressWarnings("unchecked")
             List<HasStockVo> wareSku = (List<HasStockVo>) this.wmsWareSkuFeign.getSkuHasStock(skuIds).get("data");
-            hasStockMap = wareSku.stream().collect(Collectors.toMap(HasStockVo::getSkuId, HasStockVo::getHasStock));
-        } catch (Exception ignored) {
-            ;
-        }
+            hasStockMap = wareSku.stream()
+                    .collect(
+                            // 收集成map
+                            Collectors.toMap(HasStockVo::getSkuId, HasStockVo::getHasStock)
+                    );
+        } catch (Exception ignored) {}
 
         Map<Long, Boolean> finalHasStockMap = hasStockMap;
         List<SkuElasticModel> skuList = skus.stream().map(item -> {
@@ -410,8 +432,20 @@ public class PmsSpuInfoServiceImpl implements PmsSpuInfoService {
             return esModel;
         }).collect(Collectors.toList());
 
+
         // 将数据推入elasticsearch
-        goodsFeign.pushAll(skuEsModel);
+        int code = Integer.parseInt((String) this.goodsFeign.pushAll(skuEsModel).get("code"));
+
+        if (code == 200) { // 远程调用成功
+            // 修改当前商品上架状态
+            PmsSpuInfo goods = new PmsSpuInfo();
+            goods.setId(spuId);
+            goods.setPublishStatus(ProductConstant.ProductStatusEnum.SPU_UP.getCode()); // 设置商品上架
+            goods.setUpdateTime(LocalDateTime.now()); // 设置修改时间
+            this.update(goods);
+        } else {
+
+        }
 
     }
 }

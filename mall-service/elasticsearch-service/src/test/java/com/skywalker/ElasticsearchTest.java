@@ -28,12 +28,12 @@ public class ElasticsearchTest {
     @Test
     public void esClientTest() {
         Item item = new Item();
-        item.setId(1L);
-        item.setPrice(0.1);
-        item.setCategory("category");
-        item.setImages("http://localhost:8080/list");
-        item.setBrand("brand");
-        item.setTitle("title");
+        item.setId(2L);
+        item.setPrice(0.2);
+        item.setCategory("category2");
+        item.setImages("http://localhost:8080/list2");
+        item.setBrand("brand2");
+        item.setTitle("title2");
         itemRepository.save(item);
     }
 

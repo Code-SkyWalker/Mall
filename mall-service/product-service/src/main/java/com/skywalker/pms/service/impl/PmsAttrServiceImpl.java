@@ -307,9 +307,10 @@ public class PmsAttrServiceImpl implements PmsAttrService {
      */
     @Override
     public List<PmsAttr> findByIds(List<Long> attrIds) {
+        if (attrIds.isEmpty()) return null;
         Example example = new Example(PmsAttr.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("attrId", attrIds);
-        return this.pmsAttrMapper.selectByExample(example)  ;
+        criteria.andIn("attrId", attrIds);
+        return this.pmsAttrMapper.selectByExample(example);
     }
 }

@@ -27,6 +27,8 @@ public class Goods {
     @Id
     private Long skuId; // 商品Id
 
+    private Long spuId; // spuId
+
     @Field(type = FieldType.Keyword, index = false)
     private String pic; // 商品默认图片
 
